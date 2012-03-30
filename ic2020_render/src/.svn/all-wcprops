@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/3/trunk/ic2020_render/src
+END
+GLCamera.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/ic2020_render/src/GLCamera.h
+END
+Constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/ic2020_render/src/Constants.h
+END
+Vector3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/ic2020_render/src/Vector3.cpp
+END
+renderer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/ic2020_render/src/renderer.cpp
+END
+KeyframeUpdater.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3/trunk/ic2020_render/src/KeyframeUpdater.cpp
+END
+Vector3.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/ic2020_render/src/Vector3.h
+END
+GLCamera.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3/trunk/ic2020_render/src/GLCamera.cpp
+END
+KeyframeUpdater.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3/trunk/ic2020_render/src/KeyframeUpdater.h
+END

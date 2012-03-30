@@ -1,0 +1,3 @@
+<launch>
+	<node name="optflow" pkg="ic2020_optflow" type="ic2020_optflow" launch-prefix="gdb -ex run --args"/>
+</launch>

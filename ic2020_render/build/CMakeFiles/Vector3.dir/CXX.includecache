@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.cpp
+Vector3.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.h
+math.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/math.h
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.h
+

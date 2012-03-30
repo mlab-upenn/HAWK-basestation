@@ -1,0 +1,20 @@
+<package>
+  <description brief="ic2020_optflow">
+
+     ic2020_optflow
+
+  </description>
+  <author>Sean Anderson</author>
+  <license>CC BY-NC-SA 2.5</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+  <depend package="std_msgs"/>
+  <depend package="ic2020_vodom"/>
+
+</package>
+
+

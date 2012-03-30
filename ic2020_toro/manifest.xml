@@ -1,0 +1,21 @@
+<package>
+  <description brief="ic2020_toro">
+
+     ic2020_toro
+
+  </description>
+  <author>Sean Anderson</author>
+  <license>CC BY-NC-SA 2.5</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="ic2020_vodom"/>
+  <depend package="ic2020_render"/>
+  
+  <depend package="geometry_msgs"/>
+
+</package>
+
+

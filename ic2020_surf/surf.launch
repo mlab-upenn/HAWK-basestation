@@ -1,0 +1,3 @@
+<launch>
+	<node name="surf" pkg="ic2020_surf" type="ic2020_surf" launch-prefix="gdb -ex run --args"/>
+</launch>

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/3/trunk/ic2020_render/CMake
+END
+FindOpenCV.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/3/trunk/ic2020_render/CMake/FindOpenCV.cmake
+END

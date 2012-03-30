@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3/trunk/ic2020_render/CMake/cuda/FindCUDA
+END
+make2cmake.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3/trunk/ic2020_render/CMake/cuda/FindCUDA/make2cmake.cmake
+END
+parse_cubin.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/3/trunk/ic2020_render/CMake/cuda/FindCUDA/parse_cubin.cmake
+END
+run_nvcc.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/trunk/ic2020_render/CMake/cuda/FindCUDA/run_nvcc.cmake
+END

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Constants.h
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.cpp
+GLCamera.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.h
+GL/glut.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/GL/glut.h
+math.h
+-
+Constants.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Constants.h
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.h
+Vector3.h
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.h
+
+/home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.h
+

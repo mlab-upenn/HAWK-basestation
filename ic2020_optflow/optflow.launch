@@ -1,0 +1,6 @@
+
+<launch>
+	<node name="kinect" pkg="openni_camera" type="openni_node"/>
+	<node name="optflow" pkg="ic2020_optflow" type="ic2020_optflow"/>
+	<node name="surf" pkg="ic2020_surf" type="ic2020_surf"/>
+</launch>

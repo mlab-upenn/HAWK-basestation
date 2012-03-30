@@ -1,0 +1,3 @@
+<launch>
+	<node name="toro" pkg="ic2020_toro" type="ic2020_toro" launch-prefix="gdb -ex run --args"/>
+</launch>

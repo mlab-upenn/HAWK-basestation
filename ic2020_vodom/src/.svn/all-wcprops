@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/3/trunk/ic2020_vodom/src
+END
+SURFHelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/SURFHelper.cpp
+END
+Constants.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/Constants.h
+END
+CameraParameters.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/CameraParameters.h
+END
+ic2020_vodom.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/ic2020_vodom.cpp
+END
+Keyframe.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/Keyframe.cpp
+END
+SURFHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/SURFHelper.h
+END
+Vector3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/Vector3.cpp
+END
+VisualOdometry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/VisualOdometry.cpp
+END
+CornerHelper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/CornerHelper.cpp
+END
+Keyframe.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/Keyframe.h
+END
+Vector3.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/Vector3.h
+END
+VisualOdometry.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/VisualOdometry.h
+END
+CameraParameters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/CameraParameters.cpp
+END
+CornerHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3/trunk/ic2020_vodom/src/CornerHelper.h
+END
