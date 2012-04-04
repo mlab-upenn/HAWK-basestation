@@ -153,6 +153,7 @@ void keyframeVodomCallback(const ic2020_vodom::keyframe::ConstPtr& msg)
 
 void keyframeCallback(const ic2020_vodom::keyframe::ConstPtr& msg)
 {
+  printf("Invoking keyframeCallback\n");
     if (keyframes.size() > 0) {
         // TODO CLEANUP INDEX ASSUMPTION
         unsigned int offset = (keyframes[0])->keyframe_num;        
@@ -374,12 +375,32 @@ void display(void)
     
 	// Fix with IMU
     GLfloat imumat[16];
+
+    imumat[0] = 1.0f;
+    imumat[1] = 0.0f;
+    imumat[2] = 0.0f;
+    imumat[3] = 0.0f;
+    imumat[4] = 0.0f;
+    imumat[5] = 1.0f;
+    imumat[6] = 0.0f;
+    imumat[7] = 0.0f;
+    imumat[8] = 0.0f;
+    imumat[9] = 0.0f;
+    imumat[10] = 1.0f;
+    imumat[11] = 0.0f;
+    imumat[12] = 0.0f;
+    imumat[13] = 0.0f;
+    imumat[14] = 0.0f;
+    imumat[15] = 1.0f;
+
+    /*
     double alpha = initial_imu.z;
     double gamma = initial_imu.x;
     imumat[0] = cos(alpha);    imumat[4] = -sin(alpha)*cos(gamma);    imumat[8]  = sin(alpha)*sin(gamma);     imumat[12] = 0.0f;
     imumat[1] = sin(alpha);    imumat[5] = cos(alpha)*cos(gamma);     imumat[9]  = -cos(alpha)*sin(gamma);    imumat[13] = 0.0f;
     imumat[2] = 0.0f;          imumat[6] = sin(gamma);                imumat[10] = cos(gamma);                imumat[14] = 0.0f;
     imumat[3] = 0.0f;          imumat[7] = 0.0f;                      imumat[11] = 0.0f;                      imumat[15] = 1.0f;
+    */
     glMultMatrixf(imumat);
 	
 	glPushMatrix();

@@ -80,8 +80,8 @@
 #define KEYFRAME_BREAK_DIST 0.2 //average distance (m) that points travel before breaking to new keyframe
 
 // METHOD 2 (USED)
-#define KEYFRAME_BREAK_TRANS 0.2 //average distance (m) that camera travels to break keyframe
-#define KEYFRAME_BREAK_PX    75 //100 //average distance (px) that features travel to break keyframe
+#define KEYFRAME_BREAK_TRANS 0.8 //Original: 0.2 //average distance (m) that camera travels to break keyframe
+#define KEYFRAME_BREAK_PX    100 //Original: 75 //average distance (px) that features travel to break keyframe
 
 const bool bw_not_color = false;
 int IPL_PXL_BYTES = bw_not_color?BW_IPL_PXL_BYTES:CLR_IPL_PXL_BYTES;
@@ -217,7 +217,7 @@ int main(int argc, char **argv)
     image_transport::Subscriber image_sub;
     //image_sub = it.subscribe("/kinect/rgb/image_rect_color", 1, &imageCallback);
     image_sub = it.subscribe("/camera/rgb/image_color", 1, &imageCallback);
-    ros::Subscriber pc_sub = n.subscribe("/camera/depth/points", 5, pointcloudCallback);  
+    ros::Subscriber pc_sub = n.subscribe("/camera/depth/points", 5, &pointcloudCallback);  
     ros::Subscriber imu_sub = n.subscribe("/camera/imu", 5, &imuCallback); 
     
     ros::Publisher flow_pub = n.advertise<ic2020_vodom::keyframe>("/flow/keyframes", 5);
@@ -332,7 +332,8 @@ int main(int argc, char **argv)
                     for (unsigned int i = 0; i < 3; i++) { keyframeB->translation[i] = translation[i]; }
                     
                     // Publish Frame B
-                    keyframeB->PublishKeyframe(&contflow_pub);
+		    copyInColorData(keyframeB->points, (uint8_t *)(&keyframeB->im->imageData[0]));
+		    keyframeB->PublishKeyframe(&contflow_pub);
                 }
             }
             
@@ -353,7 +354,7 @@ int main(int argc, char **argv)
                 length = length/sqrt((double)(cornA[i].point3D[2]+cornB[i].point3D[2])/2.0);*/
                 
                 double dx = (double)(cornA[i].point2D[0] - cornB[i].point2D[0]);
-	            double dy = (double)(cornA[i].point2D[1] - cornB[i].point2D[1]);
+		double dy = (double)(cornA[i].point2D[1] - cornB[i].point2D[1]);
                 double length = sqrt(pow(dx,2.0)+pow(dy,2.0));
                 
                 total_length = total_length + length;
@@ -388,10 +389,10 @@ int main(int argc, char **argv)
             {
                 force_break = false;
 		
+		// Copy Corner Info Into Keyframes
 		copyInColorData(keyframeA->points, (uint8_t *)(&keyframeA->im->imageData[0]));
-                // Copy Corner Info Into Keyframes
-                keyframeA->PublishKeyframe(&flow_pub);
-                delete keyframeA;
+		keyframeA->PublishKeyframe(&flow_pub);
+		delete keyframeA;
                 keyframeA = keyframeB;
                 keyframeB = new Keyframe();
                 keyframe_num++;

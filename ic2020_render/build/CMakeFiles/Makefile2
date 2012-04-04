@@ -348,9 +348,9 @@ clean: CMakeFiles/clean-test-results.dir/clean
 
 # All Build rule for target.
 CMakeFiles/renderer.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-CMakeFiles/renderer.dir/all: CMakeFiles/GLCamera.dir/all
-CMakeFiles/renderer.dir/all: CMakeFiles/Vector3.dir/all
 CMakeFiles/renderer.dir/all: CMakeFiles/KeyframeUpdater.dir/all
+CMakeFiles/renderer.dir/all: CMakeFiles/Vector3.dir/all
+CMakeFiles/renderer.dir/all: CMakeFiles/GLCamera.dir/all
 	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/depend
 	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_render/build/CMakeFiles  8
