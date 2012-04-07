@@ -1,0 +1,6 @@
+
+void compute_rgb_map(void);
+
+void compute_depth_map(void);
+
+

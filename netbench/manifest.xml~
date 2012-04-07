@@ -1,0 +1,14 @@
+<package>
+  <description brief="netbench">
+
+     netbench
+
+  </description>
+  <author>mlab</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/netbench</url>
+
+</package>
+
+
