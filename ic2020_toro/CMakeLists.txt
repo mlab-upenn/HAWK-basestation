@@ -14,8 +14,8 @@ rosbuild_init()
 #INCLUDE(${CMAKE_SOURCE_DIR}/CMake/cuda/FindCUDA.cmake)
 find_package(OpenCV REQUIRED)
 
-set(VODOM_PATH "/home/mlab/ros/ic2020-read-only/ic2020_vodom")
-set(RENDER_PATH "/home/mlab/ros/ic2020-read-only/ic2020_render")
+set(VODOM_PATH "/home/mlab/ros/HAWK-basestation/ic2020_vodom")
+set(RENDER_PATH "/home/mlab/ros/HAWK-basestation/ic2020_render")
 
 #set the default path for built executables to the "bin" directory
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

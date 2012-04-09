@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_optflow
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_optflow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_optflow/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_optflow/build
 
 # Utility rule file for test-future.
 
@@ -57,6 +54,6 @@ CMakeFiles/test-future.dir/clean:
 .PHONY : CMakeFiles/test-future.dir/clean
 
 CMakeFiles/test-future.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_optflow/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_optflow /home/mlab/ros/ic2020-read-only/ic2020_optflow /home/mlab/ros/ic2020-read-only/ic2020_optflow/build /home/mlab/ros/ic2020-read-only/ic2020_optflow/build /home/mlab/ros/ic2020-read-only/ic2020_optflow/build/CMakeFiles/test-future.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_optflow/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_optflow /home/mlab/ros/HAWK-basestation/ic2020_optflow /home/mlab/ros/HAWK-basestation/ic2020_optflow/build /home/mlab/ros/HAWK-basestation/ic2020_optflow/build /home/mlab/ros/HAWK-basestation/ic2020_optflow/build/CMakeFiles/test-future.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test-future.dir/depend
 

@@ -64,6 +64,10 @@
 #include "Keyframe.h"
 #include "CornerHelper.h"
 
+// New stuff
+#include "pcl_ros/point_cloud.h"
+#include "pcl/point_types.h"
+
 /////////////////////
 // Fixed Constants //
 /////////////////////
@@ -89,6 +93,7 @@ std::string IPL_IMG_TYPE = bw_not_color?"mono8":"bgr8";
 
 CornerHelper cornHelp;
 
+/*
 static CvScalar colors[] = {
 	{{0,0,255}},
 	{{0,128,255}},
@@ -99,7 +104,7 @@ static CvScalar colors[] = {
 	{{255,0,0}},
 	{{255,0,255}},
 	{{255,255,255}}
-};
+	};*/
 
 // ROS Image Pipeline stuff
 sensor_msgs::CvBridge bridge;
@@ -113,6 +118,33 @@ Keyframe* keyframeB;
 
 bool new_B = false;
 
+
+void pointcloudCallback(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr& msg)
+{
+      
+  // free mem
+  if (keyframeB->points != NULL) { delete [] keyframeB->points; }
+  keyframeB->points = NULL;
+  
+  keyframeB->numberOf3DPoints = msg->width*msg->height;
+  if (keyframeB->numberOf3DPoints > 0)
+    {
+      keyframeB->point_step = msg->width;
+      keyframeB->points = new PointColor[keyframeB->numberOf3DPoints];
+      memcpy(&keyframeB->points[0], &msg->points[0], keyframeB->numberOf3DPoints*sizeof(PointColor));              
+    }      
+  // Switch colors
+  uint8_t temp;
+  for (unsigned int i = 0; i < keyframeB->numberOf3DPoints; i++)
+    {
+      
+      temp = keyframeB->points[i].b;
+      keyframeB->points[i].b = keyframeB->points[i].r;
+      keyframeB->points[i].r = temp;
+    }
+}
+
+/*
 void pointcloudCallback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 {
     // free mem
@@ -125,18 +157,18 @@ void pointcloudCallback(const sensor_msgs::PointCloud2::ConstPtr& msg)
         keyframeB->point_step = msg->width;
         keyframeB->points = new PointColor[keyframeB->numberOf3DPoints];
         memcpy(&keyframeB->points[0], &msg->data[0], keyframeB->numberOf3DPoints*sizeof(PointColor));              
-    }   
-    
-    // Switch colors
-    uint8_t temp;
-    for (unsigned int i = 0; i < keyframeB->numberOf3DPoints; i++)
+	}   
+  // Switch colors
+  uint8_t temp;
+  for (unsigned int i = 0; i < keyframeB->numberOf3DPoints; i++)
     {
-            
-        temp = keyframeB->points[i].b;
-        keyframeB->points[i].b = keyframeB->points[i].r;
-        keyframeB->points[i].r = temp;
+      
+      temp = keyframeB->points[i].b;
+      keyframeB->points[i].b = keyframeB->points[i].r;
+      keyframeB->points[i].r = temp;
     }
 }
+*/
 
 void imageCallback(const sensor_msgs::ImageConstPtr& msg_ptr)
 {
@@ -222,6 +254,7 @@ int main(int argc, char **argv)
     
     ros::Publisher flow_pub = n.advertise<ic2020_vodom::keyframe>("/flow/keyframes", 5);
     ros::Publisher contflow_pub = n.advertise<ic2020_vodom::keyframe>("/flow/contframes", 5);
+
     
     // Wait for video streams to be up
     BlockWhileWaitingForVideo();   

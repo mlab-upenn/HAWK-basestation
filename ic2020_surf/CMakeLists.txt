@@ -17,9 +17,10 @@ set(CUDA_SDK_INSTALL_PATH "/home/mlab/NVIDIA_GPU_Computing_SDK/C")
 set(LIBDIR_CUDA "${CUDA_SDK_INSTALL_PATH}/lib")
 set(COMMONDIR "${CUDA_SDK_INSTALL_PATH}/common")
 
-set(SURF_INSTALL_PATH "/home/mlab/ros/GPUSURF64/libsurf")
-set(NCGL_INSTALL_PATH "/home/mlab/ros/GPUSURF64/libncgl")
+set(SURF_INSTALL_PATH "/home/mlab/src/GPUSURF64/libsurf")
+set(NCGL_INSTALL_PATH "/home/mlab/src/GPUSURF64/libncgl")
 set(GLUT_INC_PATH "/usr/include")
+set(GNU_LIB_PATH "/usr/lib/x86_64-linux-gnu")
 set(GLUT_LIB_PATH "/usr/lib")
 set(GLEW_INC_PATH "/usr/include")
 set(GLEW_LIB_PATH "/usr/lib")
@@ -32,7 +33,7 @@ set(IMAGEMAGICK_LIB_PATH "/usr/local/lib")
 #INCLUDE(${CMAKE_SOURCE_DIR}/CMake/cuda/FindCUDA.cmake)
 find_package(OpenCV REQUIRED)
 
-set(VODOM_PATH "~/ros/ic2020-read-only/ic2020_vodom")
+set(VODOM_PATH "~/ros/HAWK-basestation/ic2020_vodom")
 
 INCLUDE_DIRECTORIES(
 ${CMAKE_SOURCE_DIR}
@@ -84,7 +85,7 @@ TARGET_LINK_LIBRARIES(ic2020_surf ${GLEW_LIB_PATH}/libGLEW.a)
 TARGET_LINK_LIBRARIES(ic2020_surf ${CG_LIB_PATH}/libCg.so)
 TARGET_LINK_LIBRARIES(ic2020_surf ${CG_LIB_PATH}/libCgGL.so)
 TARGET_LINK_LIBRARIES(ic2020_surf ${GLUT_LIB_PATH}/libGL.so)
-TARGET_LINK_LIBRARIES(ic2020_surf ${GLUT_LIB_PATH}/libpthread.so)
+TARGET_LINK_LIBRARIES(ic2020_surf ${GNU_LIB_PATH}/libpthread.so)
 TARGET_LINK_LIBRARIES(ic2020_surf ${IMAGEMAGICK_LIB_PATH}/libMagick++.so)
 
 # Add debugging flags

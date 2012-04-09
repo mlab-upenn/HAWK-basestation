@@ -66,6 +66,9 @@
 #include "Keyframe.h"
 #include "SURFHelper.h"
 
+// Uncomment the following for visualization
+// #define VISUALIZE
+
 #define BW_IPL_PXL_BYTES 1
 #define CLR_IPL_PXL_BYTES 3
 #define MIN_STEREO_DIST 0.1f
@@ -150,8 +153,10 @@ int main(int argc, char **argv)
 
     // Create display images
 	view_im = cvCreateImage( cvSize(newArrival->width, newArrival->height), 8, IPL_PXL_BYTES );
-
+	
+	#ifdef VISUALIZE
 	cvNamedWindow("SURF", CV_WINDOW_AUTOSIZE);
+	#endif
 
     // Initialize SURFer
 	fprintf(stderr,"starting surfer...");
@@ -236,9 +241,11 @@ int main(int argc, char **argv)
         // Publish Point Clouds
         kA->PublishKeyframe(&surf_pub);
 
+	#ifdef VISUALIZE
         // Show surf image
         cvShowImage("SURF", view_im);
-        
+	#endif
+
     }
 
     delete surfer;

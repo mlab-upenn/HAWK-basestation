@@ -29,6 +29,9 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(netbench src/netbench.cpp src/pgdecompress.cpp src/pgcalibrate.cpp)
 
-target_link_libraries(netbench /home/mlab/ros/netbench/lib/libjpeg.so z)
+rosbuild_add_executable(netbench src/netbench.cpp src/pgdecompress.cpp src/pgcalibrate.cpp )
+
+rosbuild_add_compile_flags(netbench -g)
+target_link_libraries(netbench /home/mlab/ros/HAWK-basestation/netbench/lib/libjpeg.so)
+target_link_libraries(netbench z)

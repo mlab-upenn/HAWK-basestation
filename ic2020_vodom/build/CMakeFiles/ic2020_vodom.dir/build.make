@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ic2020_vodom.dir/depend.make
@@ -92,17 +89,17 @@ CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o: /opt/ros/electric/stacks/ros_com
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o -c /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/ic2020_vodom.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o -c /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/ic2020_vodom.cpp
 
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/ic2020_vodom.cpp > CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/ic2020_vodom.cpp > CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.i
 
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/ic2020_vodom.cpp -o CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/ic2020_vodom.cpp -o CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.s
 
 CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o.requires:
 .PHONY : CMakeFiles/ic2020_vodom.dir/src/ic2020_vodom.o.requires
@@ -176,6 +173,6 @@ CMakeFiles/ic2020_vodom.dir/clean:
 .PHONY : CMakeFiles/ic2020_vodom.dir/clean
 
 CMakeFiles/ic2020_vodom.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles/ic2020_vodom.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles/ic2020_vodom.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ic2020_vodom.dir/depend
 

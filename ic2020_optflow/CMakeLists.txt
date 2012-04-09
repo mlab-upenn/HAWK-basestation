@@ -13,7 +13,7 @@ rosbuild_init()
 
 find_package(OpenCV REQUIRED)
 
-set(VODOM_PATH "~/ros/ic2020-read-only/ic2020_vodom")
+set(VODOM_PATH "~/ros/HAWK-basestation/ic2020_vodom")
 
 INCLUDE_DIRECTORIES(
 ${CMAKE_SOURCE_DIR}

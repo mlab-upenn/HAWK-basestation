@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_loop
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_loop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_loop/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_loop/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ic2020_loop.dir/depend.make
@@ -81,9 +81,9 @@ CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/vision_op
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_render/manifest.xml
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_toro/manifest.xml
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_render/manifest.xml
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_toro/manifest.xml
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -92,20 +92,20 @@ CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/ros_comm/
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_render/msg_gen/generated
-CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/ic2020-read-only/ic2020_toro/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_loop/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_render/msg_gen/generated
+CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o: /home/mlab/ros/HAWK-basestation/ic2020_toro/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_loop/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o -c /home/mlab/ros/ic2020-read-only/ic2020_loop/src/ic2020_loop.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o -c /home/mlab/ros/HAWK-basestation/ic2020_loop/src/ic2020_loop.cpp
 
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ic2020_loop.dir/src/ic2020_loop.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_loop/src/ic2020_loop.cpp > CMakeFiles/ic2020_loop.dir/src/ic2020_loop.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_loop/src/ic2020_loop.cpp > CMakeFiles/ic2020_loop.dir/src/ic2020_loop.i
 
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ic2020_loop.dir/src/ic2020_loop.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_loop/src/ic2020_loop.cpp -o CMakeFiles/ic2020_loop.dir/src/ic2020_loop.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_loop/src/ic2020_loop.cpp -o CMakeFiles/ic2020_loop.dir/src/ic2020_loop.s
 
 CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o.requires:
 .PHONY : CMakeFiles/ic2020_loop.dir/src/ic2020_loop.o.requires
@@ -135,10 +135,10 @@ ic2020_loop_EXTERNAL_OBJECTS =
 ../bin/ic2020_loop: /usr/lib/libopencv_imgproc.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_flann.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_core.so.2.3.1
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libVisualOdometry.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libSURFHelper.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libCornerHelper.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libVisualOdometry.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libSURFHelper.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libCornerHelper.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
 ../bin/ic2020_loop: /usr/lib/libopencv_gpu.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_contrib.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_legacy.so.2.3.1
@@ -151,10 +151,10 @@ ic2020_loop_EXTERNAL_OBJECTS =
 ../bin/ic2020_loop: /usr/lib/libopencv_imgproc.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_flann.so.2.3.1
 ../bin/ic2020_loop: /usr/lib/libopencv_core.so.2.3.1
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libVisualOdometry.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libSURFHelper.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libCornerHelper.so
-../bin/ic2020_loop: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libVisualOdometry.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libSURFHelper.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libCornerHelper.so
+../bin/ic2020_loop: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
 ../bin/ic2020_loop: /usr/lib/libopencv_gpu.so.2.3.1
 ../bin/ic2020_loop: CMakeFiles/ic2020_loop.dir/build.make
 ../bin/ic2020_loop: CMakeFiles/ic2020_loop.dir/link.txt
@@ -173,6 +173,6 @@ CMakeFiles/ic2020_loop.dir/clean:
 .PHONY : CMakeFiles/ic2020_loop.dir/clean
 
 CMakeFiles/ic2020_loop.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_loop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_loop /home/mlab/ros/ic2020-read-only/ic2020_loop /home/mlab/ros/ic2020-read-only/ic2020_loop/build /home/mlab/ros/ic2020-read-only/ic2020_loop/build /home/mlab/ros/ic2020-read-only/ic2020_loop/build/CMakeFiles/ic2020_loop.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_loop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_loop /home/mlab/ros/HAWK-basestation/ic2020_loop /home/mlab/ros/HAWK-basestation/ic2020_loop/build /home/mlab/ros/HAWK-basestation/ic2020_loop/build /home/mlab/ros/HAWK-basestation/ic2020_loop/build/CMakeFiles/ic2020_loop.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ic2020_loop.dir/depend
 

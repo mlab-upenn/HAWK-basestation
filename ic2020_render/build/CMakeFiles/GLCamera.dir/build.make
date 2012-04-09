@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_render
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_render
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_render/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_render/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GLCamera.dir/depend.make
@@ -84,7 +81,7 @@ CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/vision_opencv/c
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -93,18 +90,18 @@ CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GLCamera.dir/src/GLCamera.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/GLCamera.dir/src/GLCamera.o -c /home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/GLCamera.dir/src/GLCamera.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp
 
 CMakeFiles/GLCamera.dir/src/GLCamera.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GLCamera.dir/src/GLCamera.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.cpp > CMakeFiles/GLCamera.dir/src/GLCamera.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp > CMakeFiles/GLCamera.dir/src/GLCamera.i
 
 CMakeFiles/GLCamera.dir/src/GLCamera.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GLCamera.dir/src/GLCamera.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.cpp -o CMakeFiles/GLCamera.dir/src/GLCamera.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp -o CMakeFiles/GLCamera.dir/src/GLCamera.s
 
 CMakeFiles/GLCamera.dir/src/GLCamera.o.requires:
 .PHONY : CMakeFiles/GLCamera.dir/src/GLCamera.o.requires
@@ -134,7 +131,7 @@ GLCamera_EXTERNAL_OBJECTS =
 ../lib/libGLCamera.so: /usr/lib/libopencv_imgproc.so.2.3.1
 ../lib/libGLCamera.so: /usr/lib/libopencv_flann.so.2.3.1
 ../lib/libGLCamera.so: /usr/lib/libopencv_core.so.2.3.1
-../lib/libGLCamera.so: /usr/lib/libGLU.so
+../lib/libGLCamera.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 ../lib/libGLCamera.so: CMakeFiles/GLCamera.dir/build.make
 ../lib/libGLCamera.so: CMakeFiles/GLCamera.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../lib/libGLCamera.so"
@@ -152,6 +149,6 @@ CMakeFiles/GLCamera.dir/clean:
 .PHONY : CMakeFiles/GLCamera.dir/clean
 
 CMakeFiles/GLCamera.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_render/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_render /home/mlab/ros/ic2020-read-only/ic2020_render /home/mlab/ros/ic2020-read-only/ic2020_render/build /home/mlab/ros/ic2020-read-only/ic2020_render/build /home/mlab/ros/ic2020-read-only/ic2020_render/build/CMakeFiles/GLCamera.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_render/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_render /home/mlab/ros/HAWK-basestation/ic2020_render /home/mlab/ros/HAWK-basestation/ic2020_render/build /home/mlab/ros/HAWK-basestation/ic2020_render/build /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles/GLCamera.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GLCamera.dir/depend
 

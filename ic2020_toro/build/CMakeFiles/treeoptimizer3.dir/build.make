@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/treeoptimizer3.dir/depend.make
@@ -84,8 +81,8 @@ CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/vis
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
-CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/ic2020-read-only/ic2020_render/manifest.xml
+CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/HAWK-basestation/ic2020_render/manifest.xml
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -94,19 +91,19 @@ CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/ros
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/ic2020-read-only/ic2020_render/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o: /home/mlab/ros/HAWK-basestation/ic2020_render/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o -c /home/mlab/ros/ic2020-read-only/ic2020_toro/src/treeoptimizer3.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o -c /home/mlab/ros/HAWK-basestation/ic2020_toro/src/treeoptimizer3.cpp
 
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_toro/src/treeoptimizer3.cpp > CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_toro/src/treeoptimizer3.cpp > CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.i
 
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_toro/src/treeoptimizer3.cpp -o CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_toro/src/treeoptimizer3.cpp -o CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.s
 
 CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o.requires:
 .PHONY : CMakeFiles/treeoptimizer3.dir/src/treeoptimizer3.o.requires
@@ -153,6 +150,6 @@ CMakeFiles/treeoptimizer3.dir/clean:
 .PHONY : CMakeFiles/treeoptimizer3.dir/clean
 
 CMakeFiles/treeoptimizer3.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles/treeoptimizer3.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles/treeoptimizer3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/treeoptimizer3.dir/depend
 

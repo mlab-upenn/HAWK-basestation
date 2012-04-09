@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/netbench
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/netbench
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/netbench/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/netbench/build
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
@@ -57,6 +54,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/mlab/ros/netbench/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/netbench /home/mlab/ros/netbench /home/mlab/ros/netbench/build /home/mlab/ros/netbench/build /home/mlab/ros/netbench/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/netbench/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/netbench /home/mlab/ros/HAWK-basestation/netbench /home/mlab/ros/HAWK-basestation/netbench/build /home/mlab/ros/HAWK-basestation/netbench/build /home/mlab/ros/HAWK-basestation/netbench/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

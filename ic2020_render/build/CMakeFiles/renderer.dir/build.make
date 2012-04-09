@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_render
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_render
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_render/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_render/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/renderer.dir/depend.make
@@ -84,7 +81,7 @@ CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/vision_opencv/c
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -93,18 +90,18 @@ CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/renderer.dir/src/renderer.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/renderer.dir/src/renderer.o -c /home/mlab/ros/ic2020-read-only/ic2020_render/src/renderer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/renderer.dir/src/renderer.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp
 
 CMakeFiles/renderer.dir/src/renderer.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/renderer.dir/src/renderer.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_render/src/renderer.cpp > CMakeFiles/renderer.dir/src/renderer.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp > CMakeFiles/renderer.dir/src/renderer.i
 
 CMakeFiles/renderer.dir/src/renderer.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/renderer.dir/src/renderer.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_render/src/renderer.cpp -o CMakeFiles/renderer.dir/src/renderer.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp -o CMakeFiles/renderer.dir/src/renderer.s
 
 CMakeFiles/renderer.dir/src/renderer.o.requires:
 .PHONY : CMakeFiles/renderer.dir/src/renderer.o.requires
@@ -149,15 +146,15 @@ renderer_EXTERNAL_OBJECTS =
 ../bin/renderer: /usr/lib/libopencv_imgproc.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_flann.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_core.so.2.3.1
-../bin/renderer: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
+../bin/renderer: //home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
 ../bin/renderer: /usr/lib/libglut.a
 ../bin/renderer: /usr/lib/libGLEW.a
 ../bin/renderer: /usr/lib/libCg.so
 ../bin/renderer: /usr/lib/libCgGL.so
 ../bin/renderer: /usr/lib/libGL.so
-../bin/renderer: /usr/lib/libpthread.so
+../bin/renderer: /usr/lib/x86_64-linux-gnu/libpthread.so
 ../bin/renderer: /usr/local/lib/libMagick++.so
-../bin/renderer: /usr/lib/libGLU.so
+../bin/renderer: /usr/lib/x86_64-linux-gnu/libGLU.so
 ../bin/renderer: /usr/lib/libopencv_contrib.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_legacy.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_objdetect.so.2.3.1
@@ -186,6 +183,6 @@ CMakeFiles/renderer.dir/clean:
 .PHONY : CMakeFiles/renderer.dir/clean
 
 CMakeFiles/renderer.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_render/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_render /home/mlab/ros/ic2020-read-only/ic2020_render /home/mlab/ros/ic2020-read-only/ic2020_render/build /home/mlab/ros/ic2020-read-only/ic2020_render/build /home/mlab/ros/ic2020-read-only/ic2020_render/build/CMakeFiles/renderer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_render/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_render /home/mlab/ros/HAWK-basestation/ic2020_render /home/mlab/ros/HAWK-basestation/ic2020_render/build /home/mlab/ros/HAWK-basestation/ic2020_render/build /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles/renderer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/renderer.dir/depend
 

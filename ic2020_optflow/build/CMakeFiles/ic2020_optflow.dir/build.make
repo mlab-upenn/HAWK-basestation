@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_optflow
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_optflow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_optflow/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_optflow/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ic2020_optflow.dir/depend.make
@@ -84,7 +81,26 @@ CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/vis
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/eigen/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/perception_pcl/cminpack/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/perception_pcl/flann/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/perception_pcl/pcl/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/bond_core/bond/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -93,18 +109,25 @@ CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/ros
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_optflow/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/perception_pcl/pcl/msg_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_optflow/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -o CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o -c /home/mlab/ros/ic2020-read-only/ic2020_optflow/src/ic2020_optflow.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -o CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o -c /home/mlab/ros/HAWK-basestation/ic2020_optflow/src/ic2020_optflow.cpp
 
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -E /home/mlab/ros/ic2020-read-only/ic2020_optflow/src/ic2020_optflow.cpp > CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -E /home/mlab/ros/HAWK-basestation/ic2020_optflow/src/ic2020_optflow.cpp > CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.i
 
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -S /home/mlab/ros/ic2020-read-only/ic2020_optflow/src/ic2020_optflow.cpp -o CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -S /home/mlab/ros/HAWK-basestation/ic2020_optflow/src/ic2020_optflow.cpp -o CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.s
 
 CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o.requires:
 .PHONY : CMakeFiles/ic2020_optflow.dir/src/ic2020_optflow.o.requires
@@ -146,13 +169,13 @@ ic2020_optflow_EXTERNAL_OBJECTS =
 ../bin/ic2020_optflow: /usr/lib/libopencv_imgproc.so.2.3.1
 ../bin/ic2020_optflow: /usr/lib/libopencv_flann.so.2.3.1
 ../bin/ic2020_optflow: /usr/lib/libopencv_core.so.2.3.1
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libVisualOdometry.so
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libCornerHelper.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libVisualOdometry.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libCornerHelper.so
 ../bin/ic2020_optflow: /usr/lib/libopencv_gpu.so.2.3.1
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libVisualOdometry.so
-../bin/ic2020_optflow: ~/ros/ic2020-read-only/ic2020_vodom/lib/libCornerHelper.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libVisualOdometry.so
+../bin/ic2020_optflow: ~/ros/HAWK-basestation/ic2020_vodom/lib/libCornerHelper.so
 ../bin/ic2020_optflow: CMakeFiles/ic2020_optflow.dir/build.make
 ../bin/ic2020_optflow: CMakeFiles/ic2020_optflow.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/ic2020_optflow"
@@ -170,6 +193,6 @@ CMakeFiles/ic2020_optflow.dir/clean:
 .PHONY : CMakeFiles/ic2020_optflow.dir/clean
 
 CMakeFiles/ic2020_optflow.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_optflow/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_optflow /home/mlab/ros/ic2020-read-only/ic2020_optflow /home/mlab/ros/ic2020-read-only/ic2020_optflow/build /home/mlab/ros/ic2020-read-only/ic2020_optflow/build /home/mlab/ros/ic2020-read-only/ic2020_optflow/build/CMakeFiles/ic2020_optflow.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_optflow/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_optflow /home/mlab/ros/HAWK-basestation/ic2020_optflow /home/mlab/ros/HAWK-basestation/ic2020_optflow/build /home/mlab/ros/HAWK-basestation/ic2020_optflow/build /home/mlab/ros/HAWK-basestation/ic2020_optflow/build/CMakeFiles/ic2020_optflow.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ic2020_optflow.dir/depend
 

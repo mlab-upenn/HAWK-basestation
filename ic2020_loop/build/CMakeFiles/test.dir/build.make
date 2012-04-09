@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_loop
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_loop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_loop/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_loop/build
 
 # Utility rule file for test.
 
@@ -54,6 +54,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_loop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_loop /home/mlab/ros/ic2020-read-only/ic2020_loop /home/mlab/ros/ic2020-read-only/ic2020_loop/build /home/mlab/ros/ic2020-read-only/ic2020_loop/build /home/mlab/ros/ic2020-read-only/ic2020_loop/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_loop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_loop /home/mlab/ros/HAWK-basestation/ic2020_loop /home/mlab/ros/HAWK-basestation/ic2020_loop/build /home/mlab/ros/HAWK-basestation/ic2020_loop/build /home/mlab/ros/HAWK-basestation/ic2020_loop/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

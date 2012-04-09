@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro/build
 
 # Utility rule file for ROSBUILD_genmsg_cpp.
 
@@ -81,8 +78,8 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/ic2020_toro/loopnotice.h
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/pluginlib/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
-../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/ic2020-read-only/ic2020_render/manifest.xml
+../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/HAWK-basestation/ic2020_render/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -91,11 +88,11 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/ic2020_toro/loopnotice.h
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/newedge.h: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/ic2020-read-only/ic2020_render/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
+../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+../msg_gen/cpp/include/ic2020_toro/newedge.h: /home/mlab/ros/HAWK-basestation/ic2020_render/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/ic2020_toro/newedge.h"
-	/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/mlab/ros/ic2020-read-only/ic2020_toro/msg/newedge.msg
+	/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/mlab/ros/HAWK-basestation/ic2020_toro/msg/newedge.msg
 
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: ../msg/loopnotice.msg
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py
@@ -133,8 +130,8 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/ic2020_toro/loopnotice.h
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/pluginlib/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
-../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/ic2020-read-only/ic2020_render/manifest.xml
+../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/HAWK-basestation/ic2020_render/manifest.xml
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -143,11 +140,11 @@ CMakeFiles/ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/ic2020_toro/loopnotice.h
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/ic2020-read-only/ic2020_render/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_2)
+../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+../msg_gen/cpp/include/ic2020_toro/loopnotice.h: /home/mlab/ros/HAWK-basestation/ic2020_render/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../msg_gen/cpp/include/ic2020_toro/loopnotice.h"
-	/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/mlab/ros/ic2020-read-only/ic2020_toro/msg/loopnotice.msg
+	/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/scripts/genmsg_cpp.py /home/mlab/ros/HAWK-basestation/ic2020_toro/msg/loopnotice.msg
 
 ROSBUILD_genmsg_cpp: CMakeFiles/ROSBUILD_genmsg_cpp
 ROSBUILD_genmsg_cpp: ../msg_gen/cpp/include/ic2020_toro/newedge.h
@@ -164,6 +161,6 @@ CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_cpp.dir/depend
 

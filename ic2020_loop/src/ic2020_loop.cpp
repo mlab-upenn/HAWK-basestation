@@ -84,6 +84,9 @@
 #define VOTE_MATCHES 4 // # of frames to try to loop close against
 #define LOOP_DETEC_MIN_QUALITY 0.3 // Required quality for a loop detection
 
+// Uncomment the following to enable visualization
+// #define VISUALIZE
+
 const bool bw_not_color = false;
 int IPL_PXL_BYTES = bw_not_color?BW_IPL_PXL_BYTES:CLR_IPL_PXL_BYTES;
 std::string IPL_IMG_TYPE = bw_not_color?"mono8":"bgr8";
@@ -461,8 +464,10 @@ printf("Loop error hunt 3\n");
     printf("pit yaw rol: %f %f %f\n",pitch,yaw,roll);
     printf("translation: %f %f %f\n",translation[0],translation[1],translation[2]); 
 
+    #ifdef VISUALIZE
     // Show stereo image
     cvShowImage("LoopDetect", view_im);
+    #endif
     
     //////////////////
     // Publish Edge //
@@ -547,8 +552,10 @@ int main(int argc, char **argv)
     // Create images
 	view_im = cvCreateImage( cvSize(2*newArrival->width, newArrival->height), 8, IPL_PXL_BYTES );
 	
+	#ifdef VISUALIZE
 	cvNamedWindow("LoopDetect", CV_WINDOW_AUTOSIZE);
-	
+	#endif
+
     // Main loop
     printf("Entering main loop\n");
 

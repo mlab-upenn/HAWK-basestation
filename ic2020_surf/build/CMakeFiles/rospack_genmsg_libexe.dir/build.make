@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_surf
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_surf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_surf/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_surf/build
 
 # Utility rule file for rospack_genmsg_libexe.
 
@@ -54,6 +54,6 @@ CMakeFiles/rospack_genmsg_libexe.dir/clean:
 .PHONY : CMakeFiles/rospack_genmsg_libexe.dir/clean
 
 CMakeFiles/rospack_genmsg_libexe.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_surf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_surf /home/mlab/ros/ic2020-read-only/ic2020_surf /home/mlab/ros/ic2020-read-only/ic2020_surf/build /home/mlab/ros/ic2020-read-only/ic2020_surf/build /home/mlab/ros/ic2020-read-only/ic2020_surf/build/CMakeFiles/rospack_genmsg_libexe.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_surf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_surf /home/mlab/ros/HAWK-basestation/ic2020_surf /home/mlab/ros/HAWK-basestation/ic2020_surf/build /home/mlab/ros/HAWK-basestation/ic2020_surf/build /home/mlab/ros/HAWK-basestation/ic2020_surf/build/CMakeFiles/rospack_genmsg_libexe.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rospack_genmsg_libexe.dir/depend
 

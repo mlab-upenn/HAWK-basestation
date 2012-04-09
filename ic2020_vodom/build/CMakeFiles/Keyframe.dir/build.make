@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Keyframe.dir/depend.make
@@ -92,17 +89,17 @@ CMakeFiles/Keyframe.dir/src/Keyframe.o: /opt/ros/electric/stacks/ros_comm/tools/
 CMakeFiles/Keyframe.dir/src/Keyframe.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/Keyframe.dir/src/Keyframe.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/Keyframe.dir/src/Keyframe.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Keyframe.dir/src/Keyframe.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/Keyframe.dir/src/Keyframe.o -c /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/Keyframe.dir/src/Keyframe.o -c /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.cpp
 
 CMakeFiles/Keyframe.dir/src/Keyframe.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Keyframe.dir/src/Keyframe.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.cpp > CMakeFiles/Keyframe.dir/src/Keyframe.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.cpp > CMakeFiles/Keyframe.dir/src/Keyframe.i
 
 CMakeFiles/Keyframe.dir/src/Keyframe.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Keyframe.dir/src/Keyframe.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.cpp -o CMakeFiles/Keyframe.dir/src/Keyframe.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.cpp -o CMakeFiles/Keyframe.dir/src/Keyframe.s
 
 CMakeFiles/Keyframe.dir/src/Keyframe.o.requires:
 .PHONY : CMakeFiles/Keyframe.dir/src/Keyframe.o.requires
@@ -162,6 +159,6 @@ CMakeFiles/Keyframe.dir/clean:
 .PHONY : CMakeFiles/Keyframe.dir/clean
 
 CMakeFiles/Keyframe.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles/Keyframe.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles/Keyframe.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Keyframe.dir/depend
 

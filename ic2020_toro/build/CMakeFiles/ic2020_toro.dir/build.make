@@ -31,14 +31,11 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_toro/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_toro/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ic2020_toro.dir/depend.make
@@ -84,8 +81,8 @@ CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/vision_op
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
-CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/manifest.xml
-CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/ic2020-read-only/ic2020_render/manifest.xml
+CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/HAWK-basestation/ic2020_render/manifest.xml
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -94,19 +91,19 @@ CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/ros_comm/
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/generated
-CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/ic2020-read-only/ic2020_render/msg_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o: /home/mlab/ros/HAWK-basestation/ic2020_render/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -o CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o -c /home/mlab/ros/ic2020-read-only/ic2020_toro/src/ic2020_toro.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -o CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o -c /home/mlab/ros/HAWK-basestation/ic2020_toro/src/ic2020_toro.cpp
 
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ic2020_toro.dir/src/ic2020_toro.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -E /home/mlab/ros/ic2020-read-only/ic2020_toro/src/ic2020_toro.cpp > CMakeFiles/ic2020_toro.dir/src/ic2020_toro.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -E /home/mlab/ros/HAWK-basestation/ic2020_toro/src/ic2020_toro.cpp > CMakeFiles/ic2020_toro.dir/src/ic2020_toro.i
 
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ic2020_toro.dir/src/ic2020_toro.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -S /home/mlab/ros/ic2020-read-only/ic2020_toro/src/ic2020_toro.cpp -o CMakeFiles/ic2020_toro.dir/src/ic2020_toro.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -g -S /home/mlab/ros/HAWK-basestation/ic2020_toro/src/ic2020_toro.cpp -o CMakeFiles/ic2020_toro.dir/src/ic2020_toro.s
 
 CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o.requires:
 .PHONY : CMakeFiles/ic2020_toro.dir/src/ic2020_toro.o.requires
@@ -139,8 +136,8 @@ ic2020_toro_EXTERNAL_OBJECTS =
 ../bin/ic2020_toro: ../lib/libposegraph3.so
 ../bin/ic2020_toro: ../lib/libtreeoptimizer3.so
 ../bin/ic2020_toro: ../lib/libtreeoptimizer3_iteration.so
-../bin/ic2020_toro: /home/mlab/ros/ic2020-read-only/ic2020_vodom/lib/libKeyframe.so
-../bin/ic2020_toro: /home/mlab/ros/ic2020-read-only/ic2020_render/lib/libKeyframeUpdater.so
+../bin/ic2020_toro: /home/mlab/ros/HAWK-basestation/ic2020_vodom/lib/libKeyframe.so
+../bin/ic2020_toro: /home/mlab/ros/HAWK-basestation/ic2020_render/lib/libKeyframeUpdater.so
 ../bin/ic2020_toro: /usr/lib/libopencv_gpu.so.2.3.1
 ../bin/ic2020_toro: /usr/lib/libopencv_contrib.so.2.3.1
 ../bin/ic2020_toro: /usr/lib/libopencv_legacy.so.2.3.1
@@ -181,6 +178,6 @@ CMakeFiles/ic2020_toro.dir/clean:
 .PHONY : CMakeFiles/ic2020_toro.dir/clean
 
 CMakeFiles/ic2020_toro.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build /home/mlab/ros/ic2020-read-only/ic2020_toro/build/CMakeFiles/ic2020_toro.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_toro/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles/ic2020_toro.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ic2020_toro.dir/depend
 

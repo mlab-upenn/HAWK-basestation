@@ -14,7 +14,9 @@
   <depend package="image_transport"/>
   <depend package="std_msgs"/>
   <depend package="ic2020_vodom"/>
-
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  
 </package>
 
 

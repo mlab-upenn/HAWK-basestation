@@ -7,7 +7,8 @@
 
 // ROS includes, should only be in main
 #include "ros/ros.h"
-#include "sensor_msgs/Image.h"
+#include <pcl/visualization/cloud_viewer.h>
+#include <pcl/ros/conversions.h>
 
 // Benchmark stuff
 #define ITER_LENGTH_SECONDS 5
@@ -16,6 +17,14 @@ int byteCount = 0;
 
 // ROS publishers
 ros::Publisher rgb_pub;
+ros::Publisher depth_pub;
+ros::Publisher cloud_pub;
+
+// Compiler options:
+// Uncomment the following to visualize the cloud
+// #define VISUALIZE
+// Uncomment the following to publish depth data
+// #define PUBDEPTH
 
 int recvAll(const int sfd, uint8_t * buffer, const int len)
 {
@@ -37,6 +46,10 @@ int recvAll(const int sfd, uint8_t * buffer, const int len)
 
   return n == -1 ? -1 : bytesRead;
 }
+
+#ifdef VISUALIZE
+pcl::visualization::CloudViewer viewer("Simple Cloud Viewer");
+#endif
 
 int networkLoop()
 {
@@ -111,14 +124,18 @@ int networkLoop()
             get_in_addr((struct sockaddr *)&their_addr),
             s, INET6_ADDRSTRLEN);
 
-
+  // TODO: figure out how many of these aren't used
   uint8_t * rgbbuf = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * rgbbuf_compressed = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * depthbuf = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * depthbuf_compressed = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * rgbbuf_undistort = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * depthbuf_undistort = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
-						 
+  float * depthfp = (float *)malloc(640*480*sizeof(float));
+
+  uint8_t * rgb_flip = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
+  uint8_t * depth_flip = (uint8_t *)malloc(640*480*sizeof(uint16_t));
+  
   uint32_t depthSize;
   uint32_t rgbSize;
 
@@ -143,39 +160,80 @@ int networkLoop()
   rgb_msg.step = 640*3;
   rgb_msg.data.resize(640*480*3);
 
+  sensor_msgs::Image depth_msg;
+  depth_msg.height = 480;
+  depth_msg.width = 640;
+  depth_msg.encoding = sensor_msgs::image_encodings::TYPE_32FC1;
+  depth_msg.is_bigendian = 1;
+  depth_msg.step = 640*sizeof(float);
+  depth_msg.data.resize(640*480*sizeof(float));
+
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_msg(new pcl::PointCloud<pcl::PointXYZ>());
+
   // Main receive loop
   while(1) {
 
     // Pull rgb size
     int rv = recv(new_fd, (void *)&rgbSize, sizeof(uint32_t), 0);
-
     // Pull rgb frame
     recvAll(new_fd, rgbbuf_compressed, rgbSize);
-    // Decompress frame
-    rv = decompress_rgb(rgbbuf, rgbbuf_compressed);
-    // Undistort frame
-    undistort_rgb(rgbbuf, rgbbuf_undistort);
-    
-    byteCount += rgbSize;
-
-    // Copy data into ROS message
-    memcpy((uint8_t *)&rgb_msg.data[0], rgbbuf_undistort, 640*480*3);
-
-    rgb_pub.publish(rgb_msg);
 
     // Pull depth size
     rv = recv(new_fd, (void *)&depthSize, sizeof(uint32_t), 0);
-
     // Pull depth frame
     recvAll(new_fd, depthbuf_compressed, depthSize*sizeof(uint8_t));
-    // Decompress frame
-    decompress_depth(depthbuf, depthbuf_compressed, depthSize, 640*480*3*sizeof(uint8_t));
-    // Undistort frame
-    undistort_depth((const uint16_t *)depthbuf, (uint16_t *)depthbuf_undistort);
 
+    // Decompress frame
+    rv = decompress_rgb(rgbbuf, rgbbuf_compressed);
+    decompress_depth(depthbuf, depthbuf_compressed, depthSize, 640*480*3*sizeof(uint8_t));    
+    
+    // Flip frame
+    preFlipRGB(rgbbuf, rgb_flip);
+    preFlipDepth((uint16_t *)depthbuf, (uint16_t *)depth_flip);
+    
+    // Undistort frame
+    // undistort_rgb(rgb_flip, rgbbuf_undistort);
+    
+    //flipRowsRGB(rgbbuf, rgbbuf_undistort);
+
+    byteCount += rgbSize;
+    
+    // Undistort frame
+    // undistort_depth((const uint16_t *)depthbuf, (uint16_t *)depthbuf_undistort);
+    // flipRowsDepth(depthbuf, depthbuf_undistort);
+
+    // Convert to float
+    convertDepthToFP((uint16_t *)depth_flip, depthfp);
+
+    memcpy((uint8_t *)&depth_msg.data[0], depthfp, 640*480*sizeof(float));
+
+    #ifdef PUBDEPTH
+    // Publish depth
+    depth_pub.publish(depth_msg);
+    #endif
+
+    // Generate cloud
+    // invalidateCloud(cloud_msg);
+    makePointCloud(rgb_flip, depthfp, cloud_msg);
+    
+    #ifdef VISUALIZE
+    // Visualize cloud
+    viewer.showCloud(cloud_msg);
+    #endif
+    
+
+    // Publish messages together
+    
+    // Copy data into ROS message
+    memcpy((uint8_t *)&rgb_msg.data[0], rgb_flip, 640*480*3);
+    rgb_pub.publish(rgb_msg);
+    cloud_pub.publish(cloud_msg);
+    
     byteCount += depthSize;
     
     frameCount++;
+
+    ros::spinOnce();
     
   }
 
@@ -198,8 +256,13 @@ int main(int argc, char ** argv)
   // Initialize ROS message system
   ros::init(argc, argv, "netbench");
   ros::NodeHandle n;
-  rgb_pub = n.advertise<sensor_msgs::Image>("netbench/image", 1);
+  rgb_pub = n.advertise<sensor_msgs::Image>("camera/rgb/image_color", 1);
+  cloud_pub = n.advertise<pcl::PointCloud<pcl::PointXYZ> >("camera/depth/points", 5);
   
+  #ifdef PUBDEPTH
+  depth_pub = n.advertise<sensor_msgs::Image>("camera/depth/image", 1);
+  #endif
+
   signal(SIGALRM, alarmHandler);
   networkLoop();
   return 0;

@@ -11,6 +11,11 @@
 #define INCONCE
 #endif
 
+#include <limits>
+
+// Kinect constant parameters
+#include "kinect_calibration.h"
+
 // Constants:
 #define NO_SAMPLE_VALUE 0x07FF
 #define SHADOW_VALUE 0x0000
@@ -40,13 +45,60 @@ typedef union {
 POINT_REMAP * rgb_remap = NULL;
 POINT_REMAP * depth_remap = NULL;
 
+float bad_point = std::numeric_limits<float>::quiet_NaN();
+
+void flipRowsRGB(uint8_t * rgb_buf, uint8_t * flip_buf)
+{
+  flip_buf += 479*640*3;
+  for(int i = 0; i < 480; i++) {
+    memcpy(flip_buf, rgb_buf, 640*3*sizeof(uint8_t));
+    rgb_buf += 640*3;
+    flip_buf -= 640*3;
+  }
+}
+
+void flipRowsDepth(uint8_t * depth_buf, uint8_t * flip_buf) {
+  flip_buf += 479*640*2;
+  for(int i = 0; i < 480; i++) {
+    memcpy(flip_buf, depth_buf, 640*2*sizeof(uint8_t));
+    depth_buf += 640*2;
+    flip_buf -= 640*2;
+  }
+}
+
+void convertDepthToFP(uint16_t * depth_buf, float * fp_buf)
+{
+
+  for(int i = 0; i < 640*480; i++) {
+    uint16_t intVal = depth_buf[i];
+    if(intVal == 0) {
+      fp_buf[i] = bad_point;
+    }
+    else {
+      fp_buf[i] = (float)depth_buf[i]/1000.0f;
+    }
+
+  }
+
+}
+
+void invalidateCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg)
+{
+  cloud_msg->points.resize(640*480);
+  for(int i = 0; i < 640*480; i++) {
+    cloud_msg->points[i].x = bad_point;
+    cloud_msg->points[i].y = bad_point;
+    cloud_msg->points[i].z = bad_point;
+  }
+}
+
 void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
-		    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg)
+		    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_msg)
 {
   float centerX, centerY;
   cloud_msg->is_dense = false;
-  cloud_msg->height = 640;
-  cloud_msg->width = 480;
+  cloud_msg->height = 480;
+  cloud_msg->width = 640;
   centerX = (cloud_msg->width >> 1) - 0.5f;
   centerY = (cloud_msg->height >> 1) - 0.5f;
 
@@ -54,39 +106,60 @@ void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
 
   int color_idx = 0, depth_idx = 0;
   int rgb_step = 640*3;
-  pcl::PointCloud<pcl::PointXYZRGB>::iterator pt_iter = cloud_msg->begin();
 
-  for(int v = 0; v < (int)cloud_msg->height, v++, color_idx += 0) {
-    for(int u = 0; u < (int)cloud_msg->width; u++, color_idx += 3, depth_idx++, pt_iter++) {
-      pcl::PointXYZRGB& pt = *pt_iter;
-      pcl::PointXYZRGB temp_pt;
-      float Z = depth_buf[depth_idx];
-      
+  pcl::PointCloud<pcl::PointXYZ>::iterator pt_iter = cloud_msg->begin();
+
+  for(int v = 0; v < (int)cloud_msg->height; v++) {
+    for(int u = 0; u < (int)cloud_msg->width; u++, pt_iter++) {
+
+      pcl::PointXYZ& pt = *pt_iter;
+    
+      float Z = depth_buf[depth_idx++];
+
       if(Z != Z || Z == 0.0f) {
-	pt.x = pt.y = pt.z = bad_point;
-	pt.rgb = bad_point;
-      } else {
+	pt.x = bad_point;
+	pt.y = bad_point;
+	pt.z = bad_point;
+	continue;
+      }
+      
+      else {
 
-	pt.x = (u - cx_d) * Z / fx_d;
-	pt.y = (v - cy_d) * Z / fy_d;
+      	pt.x = (u - cx_d) * Z / fx_d;
+	pt.y = (v - cy_d) * Z / fx_d;
 	pt.z = Z;
+	/*
+	color_idx = 640*3*v + 3*u;
+	
+	RGBValue color;
+        color.Red = rgb_buf[color_idx];
+        color.Green = rgb_buf[color_idx + 1];
+        color.Blue = rgb_buf[color_idx + 2];
+        color.Alpha = 0;
 
-	// Apply rotation and translation
-	temp_pt.x = pt.x*rotate[0] + pt.y*rotate[1] + pt.z*rotate[2] + TRAN_X;
-        temp_pt.y = pt.x*rotate[3] + pt.y*rotate[4] + pt.z*rotate[5] + TRAN_Y;
-        temp_pt.z = pt.x*rotate[6] + pt.y*rotate[7] + pt.z*rotate[8] + TRAN_Z;
-
-        uint16_t color_x = (uint16_t)lroundf(temp_pt.x * fx_rgb / temp_pt.z + cx_rgb);
-        uint16_t color_y = (uint16_t)lroundf(temp_pt.y * fy_rgb / temp_pt.z + cy_rgb);
-
+	pt.rgb = color.float_value;
+	*/
+	/* Comment out ALL the work...
+	// Apply rotation and translation 
+	
+	pcl::PointXYZRGB temp_pt;
+	temp_pt.x = pt.x*rotate[0] + pt.y*rotate[1] + pt.z*rotate[2] + tran[0];
+        temp_pt.y = pt.x*rotate[3] + pt.y*rotate[4] + pt.z*rotate[5] + tran[1];
+        temp_pt.z = pt.x*rotate[6] + pt.y*rotate[7] + pt.z*rotate[8] + tran[2];
+	
+        
+	color_x = (uint16_t)lroundf(temp_pt.x * fx_rgb / temp_pt.z + cx_rgb);
+        color_y = (uint16_t)lroundf(temp_pt.y * fy_rgb / temp_pt.z + cy_rgb);
+	
 	// Need to check to see whether reprojected point is still within the bitmap
 	if(color_x >= K_RGB_WIDTH || color_y >= K_RGB_HEIGHT) {
-          pt.x = pt.y = pt.z = bad_point;
-          pt.rgb = bad_point;
-          continue;
-        }
-
-        color_idx = rgb_step*color_y + color_x*K_RGB_BYTES;
+	  continue;
+	}
+	
+        color_idx = 640*3*color_y + 3*color_x;
+	
+	
+	//color_idx = 640*3*v + 3*u;
 
         RGBValue color;
         color.Red = rgb_buf[color_idx];
@@ -94,20 +167,28 @@ void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
         color.Blue = rgb_buf[color_idx + 2];
         color.Alpha = 0;
 
+
+	//	color_idx += 3;
+
 	// Invalidate RGB points taht are now empty due to undistortion
 	if(color.long_value == 0) {
-          pt.x = pt.y = pt.z = bad_point;
-          pt.rgb = bad_point;
+	  continue;
         } else {
           pt.rgb = color.float_value;
         }
 
+	
+	cloud_msg->points[640*color_y + color_x].x = pt.x;
+	cloud_msg->points[640*color_y + color_x].y = pt.y;
+	cloud_msg->points[640*color_y + color_x].z = pt.z;
+	cloud_msg->points[640*color_y + color_x].rgb = pt.rgb;
+	*/
       }
+      
     }
   }
 
 }
-
 
 void flip_map(POINT_REMAP * remap)
 {
@@ -162,7 +243,7 @@ void compute_rgb_map( void )
     }
   }
 
-  flip_map(rgb_remap);
+  //flip_map(rgb_remap);
 
 }
 
@@ -203,7 +284,7 @@ void compute_depth_map( void )
     }
   }
 
-  flip_map(depth_remap);
+  // flip_map(depth_remap);
 
 }
 
@@ -254,3 +335,26 @@ void undistort_depth(const uint16_t * depth_buf, uint16_t * dest_buf)
   }
 }
 
+void preFlipRGB(uint8_t * rgb_buf, uint8_t * flip_buf)
+{
+  for(int y = 0; y < 480; y++) {
+    for(int x = 0; x < 640; x++) {
+      int u = 640*3*y + 640*3 - 3*x;
+      flip_buf[u++] = *(rgb_buf++);
+      flip_buf[u++] = *(rgb_buf++);
+      flip_buf[u] = *(rgb_buf++);
+    }
+  }
+
+}
+
+void preFlipDepth(uint16_t * depth_buf, uint16_t * flip_buf)
+{
+  for(int y = 0; y < 480; y++) {
+    for(int x = 0; x < 640; x++) {
+      int u = 640*y + 640 - x;
+      flip_buf[u] = *(depth_buf++);
+    }
+  }
+
+}

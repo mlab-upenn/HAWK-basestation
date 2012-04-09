@@ -67,6 +67,9 @@
 #define BW_IPL_PXL_BYTES 1
 #define CLR_IPL_PXL_BYTES 3
 
+// Uncomment the following line to enable visualization
+// #define VISUALIZE
+
 const bool bw_not_color = false;
 int IPL_PXL_BYTES = bw_not_color?BW_IPL_PXL_BYTES:CLR_IPL_PXL_BYTES;
 std::string IPL_IMG_TYPE = bw_not_color?"mono8":"bgr8";
@@ -143,7 +146,9 @@ int main(int argc, char **argv)
     // Create display images
 	view_im = cvCreateImage( cvSize(2*newArrival->width, newArrival->height), 8, IPL_PXL_BYTES );
 
+	#ifdef VISUALIZE
 	cvNamedWindow("VisualOdom", CV_WINDOW_AUTOSIZE);
+	#endif
 
     // Main loop
     printf("Entering main loop\n");
@@ -340,8 +345,10 @@ int main(int argc, char **argv)
         kA->PublishKeyframe(&vodom_pub);
         printf("done publishing\n");
 
+	#ifdef VISUALIZE
         // Show stereo image
         cvShowImage("VisualOdom", view_im);
+	#endif
     }
 
     return 0;

@@ -28,17 +28,17 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/ic2020_render/ros/assert.h
 
-/home/mlab/ros/ic2020-read-only/ic2020_render/src/KeyframeUpdater.cpp
+/home/mlab/ros/HAWK-basestation/ic2020_render/src/KeyframeUpdater.cpp
 KeyframeUpdater.h
-/home/mlab/ros/ic2020-read-only/ic2020_render/src/KeyframeUpdater.h
+/home/mlab/ros/HAWK-basestation/ic2020_render/src/KeyframeUpdater.h
 
-/home/mlab/ros/ic2020-read-only/ic2020_render/src/KeyframeUpdater.h
+/home/mlab/ros/HAWK-basestation/ic2020_render/src/KeyframeUpdater.h
 ros/ros.h
-/home/mlab/ros/ic2020-read-only/ic2020_render/src/ros/ros.h
+/home/mlab/ros/HAWK-basestation/ic2020_render/src/ros/ros.h
 stdio.h
 -
 ic2020_render/rendupdate.h
-/home/mlab/ros/ic2020-read-only/ic2020_render/src/ic2020_render/rendupdate.h
+/home/mlab/ros/HAWK-basestation/ic2020_render/src/ic2020_render/rendupdate.h
 
 /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/ros/advertise_options.h
 ros/forwards.h

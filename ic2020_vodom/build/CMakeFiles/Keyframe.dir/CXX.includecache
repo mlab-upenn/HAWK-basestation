@@ -28,21 +28,21 @@ ros/macros.h
 ros/assert.h
 ../msg_gen/cpp/include/ic2020_vodom/ros/assert.h
 
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.cpp
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.cpp
 Keyframe.h
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.h
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.h
 
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.h
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.h
 ros/ros.h
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/ros/ros.h
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/ros/ros.h
 stdio.h
 -
 cv.h
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/cv.h
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/cv.h
 highgui.h
 -
 ic2020_vodom/keyframe.h
-/home/mlab/ros/ic2020-read-only/ic2020_vodom/src/ic2020_vodom/keyframe.h
+/home/mlab/ros/HAWK-basestation/ic2020_vodom/src/ic2020_vodom/keyframe.h
 
 /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/ros/advertise_options.h
 ros/forwards.h

@@ -1,4 +1,4 @@
-# Install script for directory: /home/mlab/ros/ic2020-read-only/ic2020_render
+# Install script for directory: /home/mlab/ros/HAWK-basestation/ic2020_render
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/mlab/ros/ic2020-read-only/ic2020_render/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/mlab/ros/HAWK-basestation/ic2020_render/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/mlab/ros/ic2020-read-only/ic2020_render/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/mlab/ros/HAWK-basestation/ic2020_render/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -1,0 +1,5 @@
+
+<launch>
+	<node name="render" pkg="ic2020_render" type="renderer"/>
+	<node name="optflow" pkg="ic2020_optflow" type="ic2020_optflow"/>
+</launch>

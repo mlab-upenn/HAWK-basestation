@@ -31,23 +31,20 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom
+CMAKE_SOURCE_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mlab/ros/ic2020-read-only/ic2020_vodom/build
+CMAKE_BINARY_DIR = /home/mlab/ros/HAWK-basestation/ic2020_vodom/build
 
 # Utility rule file for ROSBUILD_genmsg_py.
 
 CMakeFiles/ROSBUILD_genmsg_py: ../src/ic2020_vodom/msg/__init__.py
 
 ../src/ic2020_vodom/msg/__init__.py: ../src/ic2020_vodom/msg/_keyframe.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/ic2020_vodom/msg/__init__.py"
-	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --initpy /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg/keyframe.msg
+	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --initpy /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg/keyframe.msg
 
 ../src/ic2020_vodom/msg/_keyframe.py: ../msg/keyframe.msg
 ../src/ic2020_vodom/msg/_keyframe.py: /opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py
@@ -93,9 +90,9 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/ic2020_vodom/msg/__init__.py
 ../src/ic2020_vodom/msg/_keyframe.py: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 ../src/ic2020_vodom/msg/_keyframe.py: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 ../src/ic2020_vodom/msg/_keyframe.py: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ../src/ic2020_vodom/msg/_keyframe.py"
-	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --noinitpy /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg/keyframe.msg
+	/opt/ros/electric/stacks/ros_comm/clients/rospy/scripts/genmsg_py.py --noinitpy /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg/keyframe.msg
 
 ROSBUILD_genmsg_py: CMakeFiles/ROSBUILD_genmsg_py
 ROSBUILD_genmsg_py: ../src/ic2020_vodom/msg/__init__.py
@@ -112,6 +109,6 @@ CMakeFiles/ROSBUILD_genmsg_py.dir/clean:
 .PHONY : CMakeFiles/ROSBUILD_genmsg_py.dir/clean
 
 CMakeFiles/ROSBUILD_genmsg_py.dir/depend:
-	cd /home/mlab/ros/ic2020-read-only/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build /home/mlab/ros/ic2020-read-only/ic2020_vodom/build/CMakeFiles/ROSBUILD_genmsg_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mlab/ros/HAWK-basestation/ic2020_vodom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles/ROSBUILD_genmsg_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROSBUILD_genmsg_py.dir/depend
 

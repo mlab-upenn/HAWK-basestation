@@ -1,0 +1,176 @@
+/**
+ * Contains various functions to convert standard Kinect data
+ * (RGB array and depth array) into a point cloud.  This
+ * includes image registration and depth to real world
+ * value conversion.
+ */
+
+#ifndef INCONCE
+#include "pgcommon.h"
+#include "pgdecompress.h"
+#define INCONCE
+#endif
+
+// Constants:
+#define NO_SAMPLE_VALUE 0x07FF
+#define SHADOW_VALUE 0x0000
+#define K_FOCAL_LENGTH 525
+
+// If you want to rotate (flip) the image across the
+// coordinate axes, uncomment the following defines
+#define FLIP_X_AXIS
+#define FLIP_Y_AXIS
+
+typedef struct {
+  uint16_t u;
+  uint16_t v;
+} POINT_REMAP;
+
+POINT_REMAP * rgb_remap = NULL;
+POINT_REMAP * depth_remap = NULL;
+
+void flip_map(POINT_REMAP * remap)
+{
+  
+  for(int j = 0; j < 480; j++) {
+    for(int i = 0; i < 640; i++) {
+      int u = (int)remap[640*j + i].u;
+      int v = (int)remap[640*j + i].v;
+      //      u = 640 - u;
+      v = 480 - v;
+      remap[640*j + i].u = (uint16_t)u;
+      remap[640*j + i].v = (uint16_t)v;
+    }
+  }
+
+}
+
+void compute_rgb_map( void )
+{
+  if(rgb_remap != NULL) {
+    return;
+  }
+  rgb_remap = (POINT_REMAP *)malloc(640*480*sizeof(POINT_REMAP));
+
+  // For each point (i, j) in the raw RGB frame, calculate its
+  // destination (ii, jj) in the undistorted image, and store
+  // the result as an entry (i, j) in map_dest.
+  
+  int i, j, ii, jj;
+  float xsq, x, ysq, y, xx, yy, uu, vv, u, v, rsq;
+  
+  for(j = 0; j < 480; j++) {
+    for(i = 0; i < 640; i++) {
+      // Apply Brown's (un)distortion model
+      u = i - cx_rgb;
+      v = j - cy_rgb;
+      x = u/fx_rgb;
+      y = v/fy_rgb;
+      xsq = x*x;
+      ysq = y*y;
+      rsq = xsq + ysq;
+      xx = x*(1+k1_rgb*rsq + k2_rgb*rsq*rsq + k3_rgb*rsq*rsq*rsq) +
+        2*p2_rgb*x*y + p1_rgb*(rsq+2*xsq);
+      yy = y*(1+k1_rgb*rsq + k2_rgb*rsq*rsq + k3_rgb*rsq*rsq*rsq) +
+        p2_rgb*(rsq + 2*ysq) + 2*p1_rgb*x*y;
+      uu = xx*fx_rgb;
+      ii = uu + cx_rgb + 0.5;
+      vv = yy*fy_rgb;
+      jj = vv + cy_rgb + 0.5;
+      rgb_remap[j*K_RGB_WIDTH + i].u = ii;
+      rgb_remap[j*K_RGB_WIDTH + i].v = jj;      
+    }
+  }
+
+  flip_map(rgb_remap);
+
+}
+
+void compute_depth_map( void )
+{
+  if(depth_remap != NULL) {
+    return;
+  }
+  depth_remap = (POINT_REMAP *)malloc(640*480*sizeof(POINT_REMAP));
+
+  // For each point (i, j) in the raw RGB frame, calculate its
+  // destination (ii, jj) in the undistorted image, and store
+  // the result as an entry (i, j) in map_dest.
+  
+  int i, j, ii, jj;
+  float xsq, x, ysq, y, xx, yy, uu, vv, u, v, rsq;
+  
+  for(j = 0; j < 480; j++) {
+    for(i = 0; i < 640; i++) {
+      // Apply Brown's (un)distortion model
+      u = i - cx_d;
+      v = j - cy_d;
+      x = u/fx_d;
+      y = v/fy_d;
+      xsq = x*x;
+      ysq = y*y;
+      rsq = xsq + ysq;
+      xx = x*(1+k1_d*rsq + k2_d*rsq*rsq + k3_d*rsq*rsq*rsq) +
+        2*p2_d*x*y + p1_d*(rsq+2*xsq);
+      yy = y*(1+k1_d*rsq + k2_d*rsq*rsq + k3_d*rsq*rsq*rsq) +
+        p2_d*(rsq + 2*ysq) + 2*p1_d*x*y;
+      uu = xx*fx_d;
+      ii = uu + cx_d + 0.5;
+      vv = yy*fy_d;
+      jj = vv + cy_d + 0.5;
+      depth_remap[j*K_DEPTH_WIDTH + i].u = ii;
+      depth_remap[j*K_DEPTH_WIDTH + i].v = jj;      
+    }
+  }
+
+  flip_map(depth_remap);
+
+}
+
+// With the precalculated maps above, these two functions became 
+// a lot simpler - the remapping process has been simplified to 
+// an array dereference for each pixel.
+void undistort_rgb(const uint8_t * rgb_buf, uint8_t * dest_buf)
+{
+
+  int i, j, u, v, height, width;
+  height = K_RGB_HEIGHT;
+  width = K_RGB_WIDTH;
+  bzero(dest_buf, height*width*K_RGB_BYTES);
+  for(j = 0; j < height; j++) {
+    for(i = 0; i < width; i++) {
+      u = rgb_remap[j*width+i].u;
+      v = rgb_remap[j*width+i].v;
+      // Check remapped point for validity
+      if(u >= 0 && v >= 0 && u < width && v < height) {
+        dest_buf[(j*width+i)*3+0] = rgb_buf[(v*width+u)*3+0];
+        dest_buf[(j*width+i)*3+1] = rgb_buf[(v*width+u)*3+1];
+        dest_buf[(j*width+i)*3+2] = rgb_buf[(v*width+u)*3+2];
+      }
+    }
+  }
+}
+
+
+// With the precalculated maps above, these two functions became
+// a lot simpler - the remapping process has been simplified to
+// an array dereference for each pixel.
+void undistort_depth(const uint16_t * depth_buf, uint16_t * dest_buf)
+{
+
+  int i, j, u, v, height, width;
+  height = K_DEPTH_HEIGHT;
+  width = K_DEPTH_WIDTH;
+  bzero(dest_buf, height*width*sizeof(uint16_t));
+  for(j = 0; j < height; j++) {
+    for(i = 0; i < width; i++) {
+      u = depth_remap[j*width+i].u;
+      v = depth_remap[j*width+i].v;
+      // Check remapped point for validity 
+      if(u >= 0 && v >= 0 && u < width && v < height) {
+        dest_buf[(j*width+i)] = depth_buf[(v*width+u)];
+      }
+    }
+  }
+}
+

@@ -3,12 +3,12 @@
 
 CMakeFiles/renderer.dir/src/renderer.o
  ../msg_gen/cpp/include/ic2020_render/rendupdate.h
- /home/mlab/ros/ic2020-read-only/ic2020_render/src/GLCamera.h
- /home/mlab/ros/ic2020-read-only/ic2020_render/src/KeyframeUpdater.h
- /home/mlab/ros/ic2020-read-only/ic2020_render/src/Vector3.h
- /home/mlab/ros/ic2020-read-only/ic2020_render/src/renderer.cpp
- /home/mlab/ros/ic2020-read-only/ic2020_vodom/msg_gen/cpp/include/ic2020_vodom/keyframe.h
- /home/mlab/ros/ic2020-read-only/ic2020_vodom/src/Keyframe.h
+ /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.h
+ /home/mlab/ros/HAWK-basestation/ic2020_render/src/KeyframeUpdater.h
+ /home/mlab/ros/HAWK-basestation/ic2020_render/src/Vector3.h
+ /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp
+ /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/cpp/include/ic2020_vodom/keyframe.h
+ /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/Keyframe.h
  /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/cpp/include/geometry_msgs/Pose2D.h
  /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/ros/advertise_options.h
  /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/ros/advertise_service_options.h

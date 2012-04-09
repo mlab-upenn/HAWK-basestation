@@ -13,10 +13,11 @@ rosbuild_init()
 
 find_package(OpenCV REQUIRED)
 
-set(VODOM_PATH "/home/mlab/ros/ic2020-read-only/ic2020_vodom")
+set(VODOM_PATH "/home/mlab/ros/HAWK-basestation/ic2020_vodom")
 
 set(GLUT_INC_PATH "/usr/include")
 set(GLUT_LIB_PATH "/usr/lib")
+set(GNU_LIB_PATH "/usr/lib/x86_64-linux-gnu")
 set(GLEW_INC_PATH "/usr/include")
 set(GLEW_LIB_PATH "/usr/lib")
 set(CG_INC_PATH "/usr/include")
@@ -57,7 +58,7 @@ rosbuild_add_library(KeyframeUpdater src/KeyframeUpdater.cpp)
 
 # Build GL Dependant Libraries
 rosbuild_add_library(GLCamera src/GLCamera.cpp)
-target_link_libraries(GLCamera ${GLUT_LIB_PATH}/libGLU.so)
+target_link_libraries(GLCamera ${GNU_LIB_PATH}/libGLU.so)
 
 # Build Executable
 rosbuild_add_executable(renderer src/renderer.cpp)
@@ -67,7 +68,7 @@ target_link_libraries(renderer KeyframeUpdater)
 target_link_libraries(renderer Vector3)
 target_link_libraries(renderer GLCamera)
 TARGET_LINK_LIBRARIES(renderer ${OpenCV_LIBS})
-TARGET_LINK_LIBRARIES(renderer ${VODOM_PATH}/lib/libKeyframe.so)
+TARGET_LINK_LIBRARIES(renderer ${pwd}/${VODOM_PATH}/lib/libKeyframe.so)
 
 # For OpenGL
 TARGET_LINK_LIBRARIES(renderer ${GLUT_LIB_PATH}/libglut.a)
@@ -75,7 +76,7 @@ TARGET_LINK_LIBRARIES(renderer ${GLEW_LIB_PATH}/libGLEW.a)
 TARGET_LINK_LIBRARIES(renderer ${CG_LIB_PATH}/libCg.so)
 TARGET_LINK_LIBRARIES(renderer ${CG_LIB_PATH}/libCgGL.so)
 TARGET_LINK_LIBRARIES(renderer ${GLUT_LIB_PATH}/libGL.so)
-TARGET_LINK_LIBRARIES(renderer ${GLUT_LIB_PATH}/libpthread.so)
+TARGET_LINK_LIBRARIES(renderer ${GNU_LIB_PATH}/libpthread.so)
 TARGET_LINK_LIBRARIES(renderer ${IMAGEMAGICK_LIB_PATH}/libMagick++.so)
 
 
