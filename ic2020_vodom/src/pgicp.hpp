@@ -1,0 +1,44 @@
+#include "pcl/point_types.h"
+#include "pcl_ros/point_cloud.h"
+
+void pgicp(Keyframe * kA, Keyframe * kB,
+	   double * rot_estimate, double * trans_estimate,
+	   double * rotation_data, double * trans_data)
+{
+  
+  double tt;
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloudA(new pcl::PointCloud<pcl::PointXYZ>());
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloudB(new pcl::PointCloud<pcl::PointXYZ>());
+ 
+  cloudA->width = kA->features.size();
+  cloudB->width = kB->features.size();
+  cloudA->height = 1;
+  cloudB->height = 1;
+  cloudA->is_dense = false;
+  cloudB->is_dense = false;
+  cloudA->points.resize(kA->features.size());
+  cloudB->points.resize(kB->features.size());
+  
+  for(int i = 0; i < cloudA->width; i++) {
+    cloudA->points[i].x = kA->features[i].point3D[0];
+    cloudA->points[i].y = kA->features[i].point3D[1];
+    cloudA->points[i].z = kA->features[i].point3D[2];
+  }
+  for(int i = 0; i < cloudB->width; i++) {
+    cloudB->points[i].x = kB->features[i].point3D[0];
+    cloudB->points[i].y = kB->features[i].point3D[1];
+    cloudB->points[i].z = kB->features[i].point3D[2];
+  }
+
+  /*
+  pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
+  icp.setInputCloud(cloudA);
+  icp.setInputTarget(cloudB);
+  
+  icp.setMaxCorrespondenceDistance(0.05);
+  icp.setMaximumIterations(10);
+  icp.setTransformationEpsilon(1e-8);
+  icp.setEuclideanFitnessEpsilon(1);
+  */
+  
+}

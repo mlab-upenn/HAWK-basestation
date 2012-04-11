@@ -91,7 +91,7 @@ void CornerHelper::FindFeatures(Keyframe* kA, Keyframe* kB, std::vector<feature>
             &corner_count, 0.01, 5.0, 0, 3, 0, 0.04 );
     }
     
-double tt3 = (double)cvGetTickCount();	
+    double tt3 = (double)cvGetTickCount();	
 
     cvCalcOpticalFlowPyrLK(imgA, imgB, pyrA, pyrB, 
         cornersA, cornersB, corner_count,
@@ -99,8 +99,8 @@ double tt3 = (double)cvGetTickCount();
         cvTermCriteria( CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 20, .3 ), 0
     );
     
-tt3 = (double)cvGetTickCount() - tt3;
-printf( "TIME: CalcOpticalFlow Time = %gms\n", tt3/(cvGetTickFrequency()*1000.));
+    tt3 = (double)cvGetTickCount() - tt3;
+    printf( "TIME: CalcOpticalFlow Time = %gms\n", tt3/(cvGetTickFrequency()*1000.));
     
     for( int i = 0; i < corner_count; i++ ) {
         if( features_found[i] == 0 )

@@ -84,8 +84,8 @@
 #define KEYFRAME_BREAK_DIST 0.2 //average distance (m) that points travel before breaking to new keyframe
 
 // METHOD 2 (USED)
-#define KEYFRAME_BREAK_TRANS 0.8 //Original: 0.2 //average distance (m) that camera travels to break keyframe
-#define KEYFRAME_BREAK_PX    100 //Original: 75 //average distance (px) that features travel to break keyframe
+#define KEYFRAME_BREAK_TRANS 0.2 //Original: 0.2 //average distance (m) that camera travels to break keyframe
+#define KEYFRAME_BREAK_PX    75 //Original: 75 //average distance (px) that features travel to break keyframe
 
 const bool bw_not_color = false;
 int IPL_PXL_BYTES = bw_not_color?BW_IPL_PXL_BYTES:CLR_IPL_PXL_BYTES;
@@ -132,7 +132,9 @@ void pointcloudCallback(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr& msg)
       keyframeB->point_step = msg->width;
       keyframeB->points = new PointColor[keyframeB->numberOf3DPoints];
       memcpy(&keyframeB->points[0], &msg->points[0], keyframeB->numberOf3DPoints*sizeof(PointColor));              
-    }      
+    }
+  /* 
+  // Should be unnecessary if no color data added yet?
   // Switch colors
   uint8_t temp;
   for (unsigned int i = 0; i < keyframeB->numberOf3DPoints; i++)
@@ -142,6 +144,7 @@ void pointcloudCallback(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr& msg)
       keyframeB->points[i].b = keyframeB->points[i].r;
       keyframeB->points[i].r = temp;
     }
+  */
 }
 
 /*

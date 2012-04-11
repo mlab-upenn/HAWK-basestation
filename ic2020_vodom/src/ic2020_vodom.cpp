@@ -60,6 +60,8 @@
 #include "VisualOdometry.h"
 #include "Keyframe.h"
 
+#include "pgicp.hpp"
+
 /////////////////////
 // Fixed Constants //
 /////////////////////
@@ -316,13 +318,14 @@ int main(int argc, char **argv)
         **********************/
         // Setup Images and Contours
         
+	/*
         // Call ICP
-        /*double rdata2[9];
+        double rdata2[9];
         double translation2[3];
         VisualOdometry::ICPKeyframes(kA, kB, rdata, translation, rdata2, translation2);
         for (unsigned int i = 0; i < 9; i++) { kB->rotation[i] = rdata2[i]; }
-        for (unsigned int i = 0; i < 3; i++) { kB->translation[i] = translation2[i];}*/
-
+        for (unsigned int i = 0; i < 3; i++) { kB->translation[i] = translation2[i];}
+	*/
         /*********************
             Publish Frame
         **********************/        

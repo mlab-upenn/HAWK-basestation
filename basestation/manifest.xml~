@@ -1,0 +1,14 @@
+<package>
+  <description brief="basestation">
+
+     basestation
+
+  </description>
+  <author>mlab</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/basestation</url>
+
+</package>
+
+

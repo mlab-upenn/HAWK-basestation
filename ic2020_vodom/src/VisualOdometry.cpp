@@ -1168,7 +1168,10 @@ void VisualOdometry::ICPKeyframes(Keyframe* kA, Keyframe* kB, double* rot_estima
     CvSeq* first_contour = NULL;
     
     
+    #ifdef VISUALIZE
     cvNamedWindow( "WTF", 1 );
+    #endif
+
     IplImage* img_8uc3 = cvCreateImage( cvGetSize(kA->im), 8, 3 );
 
     
@@ -1199,9 +1202,12 @@ void VisualOdometry::ICPKeyframes(Keyframe* kA, Keyframe* kB, double* rot_estima
         2,
         8
     );
+    
+    #ifdef VISUALIZE
     cvShowImage( "WTF", img_8uc3 );
     cvWaitKey(10);
-    
+    #endif
+   
     for( CvSeq* c = first_contour; c != NULL; c = c->h_next ) 
     {
     
@@ -1221,9 +1227,11 @@ void VisualOdometry::ICPKeyframes(Keyframe* kA, Keyframe* kB, double* rot_estima
             }
         }
     }
- 
- cvDestroyWindow( "WTF" );
- 
+    
+    #ifdef VISUALIZE
+    cvDestroyWindow( "WTF" );
+    #endif
+
     first_contour = NULL;
     cvClearMemStorage( storage );
     cvCvtColor( kB->im, img_8uc1, CV_BGR2GRAY );

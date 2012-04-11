@@ -11,7 +11,9 @@ void convertDepthToFP(uint16_t * depth_buf, float * fp_buf);
 void invalidateCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg);
 
 void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
-		    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_msg);
+		    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg);
+
+void rebuildRGB(uint8_t * rgb, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud);
 
 void flipRowsRGB(uint8_t * rgb_buf, uint8_t * flip_buf);
 void flipRowsDepth(uint8_t * depth_buf, uint8_t * flip_buf);

@@ -42,9 +42,10 @@
  * revision 1.0
  */
  
- #include "ros/ros.h"
+#include "ros/ros.h"
 #include "std_msgs/String.h"
 
+#include <signal.h>
 #include <string>
 #include <vector>
 
@@ -59,6 +60,9 @@
 #include "GL/freeglut.h"
 #include "GLCamera.h"
 #include "Vector3.h"
+
+// File export
+#include "pgexport.h"
 
 std::vector<Keyframe*> keyframes;
 KeyframeUpdater* keyUpdate = NULL;
@@ -512,6 +516,13 @@ void display(void)
 	glutSwapBuffers();
 }
 
+void cloudExport(int sig)
+{
+  exportCloud(&keyframes);
+  printf("Exiting renderer...\n");
+  exit(0);
+}
+
 // CALCULATIONS
 // ***************************************
 void mainLoop(int v)
@@ -537,6 +548,9 @@ int main( int argc, char** argv )
     
 	int screenwidth = 800;
 	int screenheight = 600;
+
+	// Set up signal handler
+	signal(SIGINT, cloudExport);
 
 	// Call for variable initialization
 	init();

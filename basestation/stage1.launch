@@ -1,0 +1,7 @@
+
+<launch>
+	<node name="surf" pkg="ic2020_surf" type="ic2020_surf"/>
+	<node name="loop" pkg="ic2020_loop" type="ic2020_loop"/>
+	<node name="toro" pkg="ic2020_toro" type="ic2020_toro"/>
+	<node name="vodom" pkg="ic2020_vodom" type="ic2020_vodom"/>
+</launch>

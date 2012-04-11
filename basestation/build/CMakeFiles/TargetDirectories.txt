@@ -1,0 +1,15 @@
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/clean-test-results.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/rosbuild_precompile.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/rospack_genmsg.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/rospack_gensrv.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/test.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/test-future.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/test-results.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/test-results-run.dir
+/home/mlab/ros/HAWK-basestation/basestation/build/CMakeFiles/tests.dir

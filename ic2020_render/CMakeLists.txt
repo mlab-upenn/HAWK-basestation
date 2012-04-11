@@ -61,7 +61,7 @@ rosbuild_add_library(GLCamera src/GLCamera.cpp)
 target_link_libraries(GLCamera ${GNU_LIB_PATH}/libGLU.so)
 
 # Build Executable
-rosbuild_add_executable(renderer src/renderer.cpp)
+rosbuild_add_executable(renderer src/renderer.cpp src/pgexport.cpp)
 
 # Link Dependencies
 target_link_libraries(renderer KeyframeUpdater)

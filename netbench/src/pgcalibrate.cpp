@@ -82,18 +82,27 @@ void convertDepthToFP(uint16_t * depth_buf, float * fp_buf)
 
 }
 
-void invalidateCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg)
+void rebuildRGB(uint8_t * rgb, pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud)
 {
-  cloud_msg->points.resize(640*480);
-  for(int i = 0; i < 640*480; i++) {
-    cloud_msg->points[i].x = bad_point;
-    cloud_msg->points[i].y = bad_point;
-    cloud_msg->points[i].z = bad_point;
+  for(int j = 0; j < 640*480; j++) {
+    RGBValue color;
+    color.long_value = cloud->points[j].rgb;
+    if(cloud->points[j].x != cloud->points[j].x) {
+      continue; // Skip NaNs
+    }
+    rgb[3*j] = color.Red;
+    rgb[3*j+1] = color.Green;
+    rgb[3*j+2] = color.Blue;
   }
 }
 
+void invalidateCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg)
+{
+
+}
+
 void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
-		    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_msg)
+		    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_msg)
 {
   float centerX, centerY;
   cloud_msg->is_dense = false;
@@ -107,12 +116,12 @@ void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
   int color_idx = 0, depth_idx = 0;
   int rgb_step = 640*3;
 
-  pcl::PointCloud<pcl::PointXYZ>::iterator pt_iter = cloud_msg->begin();
+  pcl::PointCloud<pcl::PointXYZRGB>::iterator pt_iter = cloud_msg->begin();
 
   for(int v = 0; v < (int)cloud_msg->height; v++) {
     for(int u = 0; u < (int)cloud_msg->width; u++, pt_iter++) {
 
-      pcl::PointXYZ& pt = *pt_iter;
+      pcl::PointXYZRGB& pt = *pt_iter;
     
       float Z = depth_buf[depth_idx++];
 
@@ -128,7 +137,7 @@ void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
       	pt.x = (u - cx_d) * Z / fx_d;
 	pt.y = (v - cy_d) * Z / fx_d;
 	pt.z = Z;
-	/*
+	
 	color_idx = 640*3*v + 3*u;
 	
 	RGBValue color;
@@ -138,7 +147,7 @@ void makePointCloud(const uint8_t * rgb_buf, const float * depth_buf,
         color.Alpha = 0;
 
 	pt.rgb = color.float_value;
-	*/
+	
 	/* Comment out ALL the work...
 	// Apply rotation and translation 
 	

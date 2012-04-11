@@ -66,6 +66,8 @@
 #include "Keyframe.h"
 #include "SURFHelper.h"
 
+#include "pgdownsample.hpp"
+
 // Uncomment the following for visualization
 // #define VISUALIZE
 
@@ -198,7 +200,7 @@ int main(int argc, char **argv)
         
         // Create SURF Features
         float* rgb_points2D = new float[rgb_fd.nrf*2];
-	    CvMat rgb_points2DMat = cvMat(rgb_fd.nrf, 1, CV_32FC2, &rgb_points2D[0]); //64?
+	CvMat rgb_points2DMat = cvMat(rgb_fd.nrf, 1, CV_32FC2, &rgb_points2D[0]); //64?
         for ( unsigned int row = 0; row < rgb_fd.nrf; row++ )
         {
             CV_MAT_ELEM(rgb_points2DMat, pos2D, row, 0).f1 = rgb_fd.posdata[row*4];
@@ -239,6 +241,15 @@ int main(int argc, char **argv)
         }
         
         // Publish Point Clouds
+	
+	// Downsample Point Cloud
+	//	downsampleCloud(kA);
+	
+	
+      	printf("Downsampled successfully\n");
+
+  	fflush(stdout);
+
         kA->PublishKeyframe(&surf_pub);
 
 	#ifdef VISUALIZE
