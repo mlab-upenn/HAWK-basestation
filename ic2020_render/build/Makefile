@@ -414,6 +414,21 @@ src/Vector3.s:
 .PHONY : src/Vector3.s
 
 # target to build an object file
+src/pgexport.o:
+	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/src/pgexport.o
+.PHONY : src/pgexport.o
+
+# target to preprocess a source file
+src/pgexport.i:
+	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/src/pgexport.i
+.PHONY : src/pgexport.i
+
+# target to generate assembly for a file
+src/pgexport.s:
+	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/src/pgexport.s
+.PHONY : src/pgexport.s
+
+# target to build an object file
 src/renderer.o:
 	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/src/renderer.o
 .PHONY : src/renderer.o
@@ -466,6 +481,9 @@ help:
 	@echo "... src/Vector3.o"
 	@echo "... src/Vector3.i"
 	@echo "... src/Vector3.s"
+	@echo "... src/pgexport.o"
+	@echo "... src/pgexport.i"
+	@echo "... src/pgexport.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"

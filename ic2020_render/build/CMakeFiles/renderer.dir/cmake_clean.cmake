@@ -3,6 +3,7 @@ FILE(REMOVE_RECURSE
   "../src/ic2020_render/msg"
   "../msg_gen"
   "CMakeFiles/renderer.dir/src/renderer.o"
+  "CMakeFiles/renderer.dir/src/pgexport.o"
   "../bin/renderer.pdb"
   "../bin/renderer"
 )

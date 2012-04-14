@@ -12,7 +12,7 @@
 
 // Benchmark stuff
 #define ITER_LENGTH_SECONDS 5
-int frameCount = 0;
+int frameCount = 1;
 int byteCount = 0;
 
 // ROS publishers
@@ -23,11 +23,15 @@ ros::Publisher build_pub;
 
 // Compiler options:
 // Uncomment the following to visualize the cloud
-// #define VISUALIZE
+ #define VISUALIZE
 // Uncomment the following to publish depth data
 // #define PUBDEPTH
-
-#define REBUILD
+// Uncomment the following to publish a registration test image
+// #define REBUILD
+// Uncomment the following to flip the video (horizontally)
+ #define FLIPVIDEO
+// Uncomment the following to have framerate printouts every 5 sec:
+ #define VERBOSE
 
 int recvAll(const int sfd, uint8_t * buffer, const int len)
 {
@@ -54,10 +58,42 @@ int recvAll(const int sfd, uint8_t * buffer, const int len)
 pcl::visualization::CloudViewer viewer("Simple Cloud Viewer");
 #endif
 
+int new_fd;
+int sockfd;
+int killed = 0;
+int delayTwice = 0;
+
+void alarmHandler(int signum)
+{
+  #ifdef VERBOSE
+  printf("Average FPS over last %d seconds: %f\n", ITER_LENGTH_SECONDS, (float)frameCount/ITER_LENGTH_SECONDS);
+  printf("Effective bandwidth: %f B/s\n", byteCount/((float)ITER_LENGTH_SECONDS));
+  #endif
+
+  if(frameCount == 0) {
+    delayTwice++;
+  } else {
+    delayTwice = 0;
+  }
+
+  byteCount = 0;
+  frameCount = 0;
+  alarm(ITER_LENGTH_SECONDS);
+
+  // If we were delayed twice with no frames, quit
+  if(delayTwice >= 2) {
+    delayTwice = 0;
+    killed = 1;
+    close(new_fd);
+    signal(SIGALRM, SIG_IGN);
+  }
+
+}
+
 int networkLoop()
 {
   
-  int sockfd, new_fd, rv;
+  int rv;
   struct addrinfo hints, *servinfo, *p;
   struct sockaddr_storage their_addr;
   socklen_t sin_size;
@@ -127,6 +163,8 @@ int networkLoop()
             get_in_addr((struct sockaddr *)&their_addr),
             s, INET6_ADDRSTRLEN);
 
+  printf("Connected to %s\n", s);
+
   // TODO: figure out how many of these aren't used
   uint8_t * rgbbuf = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
   uint8_t * rgbbuf_compressed = (uint8_t *)malloc(640*480*3*sizeof(uint8_t));
@@ -153,7 +191,8 @@ int networkLoop()
   compute_depth_map();
   
   alarm(ITER_LENGTH_SECONDS);
-
+  signal(SIGALRM, alarmHandler);
+  
   // Initialize ROS message
   sensor_msgs::Image rgb_msg;
   rgb_msg.width = 640;
@@ -195,14 +234,38 @@ int networkLoop()
     // Pull depth frame
     recvAll(new_fd, depthbuf_compressed, depthSize*sizeof(uint8_t));
 
+    if(killed) {
+      return 0;
+    }
+
     // Decompress frame
     rv = decompress_rgb(rgbbuf, rgbbuf_compressed);
-    decompress_depth(depthbuf, depthbuf_compressed, depthSize, 640*480*3*sizeof(uint8_t));    
+    if(rv < 0) {
+      close(new_fd);
+      return 0;
+    }
+    rv = decompress_depth(depthbuf, depthbuf_compressed, depthSize, 640*480*3*sizeof(uint8_t));    
+    if(rv < 0) {
+      close(new_fd);
+      return 0;
+    }
     
-    // Flip frame
-    // preFlipRGB(rgbbuf, rgb_flip);
-    // preFlipDepth((uint16_t *)depthbuf, (uint16_t *)depth_flip);
+    #ifdef FLIPVIDEO
+    // Flip frame horizontally
+    preFlipRGB(rgbbuf, rgb_flip);
+    preFlipDepth((uint16_t *)depthbuf, (uint16_t *)depth_flip);
+    flipRowsRGB(rgb_flip, rgbbuf);
+    flipRowsDepth(depth_flip, depthbuf);
+    /*
+    uint8_t * temp = rgbbuf;
+    rgbbuf = rgb_flip;
+    rgb_flip = temp;
+    temp = depthbuf;
+    depthbuf = depth_flip;
+    depth_flip = temp;*/
+    #endif
     
+
     // Undistort frame
     // undistort_rgb(rgb_flip, rgbbuf_undistort);
     
@@ -247,6 +310,7 @@ int networkLoop()
     rgb_pub.publish(rgb_msg);
     cloud_pub.publish(cloud_msg);
     
+
     byteCount += depthSize;
     
     frameCount++;
@@ -259,13 +323,11 @@ int networkLoop()
 
 }
 
-void alarmHandler(int signum)
+void sigintHandler(int signum)
 {
-  printf("Average FPS over last %d seconds: %f\n", ITER_LENGTH_SECONDS, (float)frameCount/ITER_LENGTH_SECONDS);
-  printf("Effective bandwidth: %f B/s\n", byteCount/((float)ITER_LENGTH_SECONDS));
-  byteCount = 0;
-  frameCount = 0;
-  alarm(ITER_LENGTH_SECONDS);
+  close(new_fd);
+  close(sockfd);
+  exit(0);
 }
 
 int main(int argc, char ** argv)
@@ -282,7 +344,9 @@ int main(int argc, char ** argv)
   depth_pub = n.advertise<sensor_msgs::Image>("camera/depth/image", 1);
   #endif
 
-  signal(SIGALRM, alarmHandler);
-  networkLoop();
+  signal(SIGINT, sigintHandler);
+  while(1) {
+    networkLoop();
+  }
   return 0;
 }

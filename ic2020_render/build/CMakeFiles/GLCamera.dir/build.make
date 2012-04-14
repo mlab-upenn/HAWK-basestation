@@ -81,6 +81,25 @@ CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/vision_opencv/c
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/eigen/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/perception_pcl/cminpack/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/perception_pcl/flann/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/perception_pcl/pcl/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/bond_core/bond/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
@@ -90,18 +109,25 @@ CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/ros_comm/tools/
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/perception_pcl/pcl/msg_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/GLCamera.dir/src/GLCamera.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/GLCamera.dir/src/GLCamera.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GLCamera.dir/src/GLCamera.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/GLCamera.dir/src/GLCamera.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/GLCamera.dir/src/GLCamera.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp
 
 CMakeFiles/GLCamera.dir/src/GLCamera.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GLCamera.dir/src/GLCamera.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp > CMakeFiles/GLCamera.dir/src/GLCamera.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp > CMakeFiles/GLCamera.dir/src/GLCamera.i
 
 CMakeFiles/GLCamera.dir/src/GLCamera.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GLCamera.dir/src/GLCamera.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp -o CMakeFiles/GLCamera.dir/src/GLCamera.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/GLCamera.cpp -o CMakeFiles/GLCamera.dir/src/GLCamera.s
 
 CMakeFiles/GLCamera.dir/src/GLCamera.o.requires:
 .PHONY : CMakeFiles/GLCamera.dir/src/GLCamera.o.requires

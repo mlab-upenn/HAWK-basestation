@@ -240,9 +240,9 @@ clean: CMakeFiles/clean-test-results.dir/clean
 
 # All Build rule for target.
 CMakeFiles/ic2020_toro.dir/all: CMakeFiles/rosbuild_precompile.dir/all
-CMakeFiles/ic2020_toro.dir/all: CMakeFiles/treeoptimizer3_iteration.dir/all
-CMakeFiles/ic2020_toro.dir/all: CMakeFiles/posegraph3.dir/all
 CMakeFiles/ic2020_toro.dir/all: CMakeFiles/treeoptimizer3.dir/all
+CMakeFiles/ic2020_toro.dir/all: CMakeFiles/posegraph3.dir/all
+CMakeFiles/ic2020_toro.dir/all: CMakeFiles/treeoptimizer3_iteration.dir/all
 	$(MAKE) -f CMakeFiles/ic2020_toro.dir/build.make CMakeFiles/ic2020_toro.dir/depend
 	$(MAKE) -f CMakeFiles/ic2020_toro.dir/build.make CMakeFiles/ic2020_toro.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_toro/build/CMakeFiles  8

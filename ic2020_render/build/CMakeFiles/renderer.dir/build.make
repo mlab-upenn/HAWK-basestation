@@ -81,6 +81,25 @@ CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/vision_opencv/c
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/eigen/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/perception_pcl/cminpack/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/perception_pcl/flann/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/perception_pcl/pcl/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/bond_core/bond/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
@@ -90,18 +109,25 @@ CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/ros_comm/tools/
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/perception_pcl/pcl/msg_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/renderer.dir/src/renderer.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 CMakeFiles/renderer.dir/src/renderer.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/renderer.dir/src/renderer.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/renderer.dir/src/renderer.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/renderer.dir/src/renderer.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp
 
 CMakeFiles/renderer.dir/src/renderer.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/renderer.dir/src/renderer.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp > CMakeFiles/renderer.dir/src/renderer.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp > CMakeFiles/renderer.dir/src/renderer.i
 
 CMakeFiles/renderer.dir/src/renderer.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/renderer.dir/src/renderer.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp -o CMakeFiles/renderer.dir/src/renderer.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/renderer.cpp -o CMakeFiles/renderer.dir/src/renderer.s
 
 CMakeFiles/renderer.dir/src/renderer.o.requires:
 .PHONY : CMakeFiles/renderer.dir/src/renderer.o.requires
@@ -112,14 +138,108 @@ CMakeFiles/renderer.dir/src/renderer.o.provides: CMakeFiles/renderer.dir/src/ren
 
 CMakeFiles/renderer.dir/src/renderer.o.provides.build: CMakeFiles/renderer.dir/src/renderer.o
 
+CMakeFiles/renderer.dir/src/pgexport.o: CMakeFiles/renderer.dir/flags.make
+CMakeFiles/renderer.dir/src/pgexport.o: ../src/pgexport.cpp
+CMakeFiles/renderer.dir/src/pgexport.o: ../manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/tools/rospack/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/core/roslib/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/core/rosbuild/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/core/roslang/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/utilities/cpp_common/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp_traits/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/utilities/rostime/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp_serialization/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/utilities/xmlrpcpp/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosconsole/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/rospy/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/tools/rosclean/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosgraph/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosparam/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosmaster/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosout/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/roslaunch/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/ros/tools/rosunit/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rostest/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/topic_tools/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosbag/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosbagmigration/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/vision_opencv/opencv2/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/vision_opencv/cv_bridge/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/eigen/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/perception_pcl/cminpack/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/perception_pcl/flann/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/perception_pcl/pcl/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/bond_core/bond/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/perception_pcl/pcl_ros/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/manifest.xml
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/ros_comm/tools/topic_tools/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/perception_pcl/pcl/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
+CMakeFiles/renderer.dir/src/pgexport.o: /home/mlab/ros/HAWK-basestation/ic2020_vodom/msg_gen/generated
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_render/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/renderer.dir/src/pgexport.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/renderer.dir/src/pgexport.o -c /home/mlab/ros/HAWK-basestation/ic2020_render/src/pgexport.cpp
+
+CMakeFiles/renderer.dir/src/pgexport.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/renderer.dir/src/pgexport.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_render/src/pgexport.cpp > CMakeFiles/renderer.dir/src/pgexport.i
+
+CMakeFiles/renderer.dir/src/pgexport.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/renderer.dir/src/pgexport.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_render/src/pgexport.cpp -o CMakeFiles/renderer.dir/src/pgexport.s
+
+CMakeFiles/renderer.dir/src/pgexport.o.requires:
+.PHONY : CMakeFiles/renderer.dir/src/pgexport.o.requires
+
+CMakeFiles/renderer.dir/src/pgexport.o.provides: CMakeFiles/renderer.dir/src/pgexport.o.requires
+	$(MAKE) -f CMakeFiles/renderer.dir/build.make CMakeFiles/renderer.dir/src/pgexport.o.provides.build
+.PHONY : CMakeFiles/renderer.dir/src/pgexport.o.provides
+
+CMakeFiles/renderer.dir/src/pgexport.o.provides.build: CMakeFiles/renderer.dir/src/pgexport.o
+
 # Object files for target renderer
 renderer_OBJECTS = \
-"CMakeFiles/renderer.dir/src/renderer.o"
+"CMakeFiles/renderer.dir/src/renderer.o" \
+"CMakeFiles/renderer.dir/src/pgexport.o"
 
 # External object files for target renderer
 renderer_EXTERNAL_OBJECTS =
 
 ../bin/renderer: CMakeFiles/renderer.dir/src/renderer.o
+../bin/renderer: CMakeFiles/renderer.dir/src/pgexport.o
 ../bin/renderer: /usr/lib/libopencv_contrib.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_legacy.so.2.3.1
 ../bin/renderer: /usr/lib/libopencv_objdetect.so.2.3.1
@@ -176,6 +296,7 @@ CMakeFiles/renderer.dir/build: ../bin/renderer
 .PHONY : CMakeFiles/renderer.dir/build
 
 CMakeFiles/renderer.dir/requires: CMakeFiles/renderer.dir/src/renderer.o.requires
+CMakeFiles/renderer.dir/requires: CMakeFiles/renderer.dir/src/pgexport.o.requires
 .PHONY : CMakeFiles/renderer.dir/requires
 
 CMakeFiles/renderer.dir/clean:

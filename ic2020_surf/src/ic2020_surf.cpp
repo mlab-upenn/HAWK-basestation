@@ -152,29 +152,29 @@ int main(int argc, char **argv)
         
     // Wait for video streams to be up
     BlockWhileWaitingForVideo();  
-
+    
     // Create display images
-	view_im = cvCreateImage( cvSize(newArrival->width, newArrival->height), 8, IPL_PXL_BYTES );
-	
-	#ifdef VISUALIZE
-	cvNamedWindow("SURF", CV_WINDOW_AUTOSIZE);
-	#endif
-
+    view_im = cvCreateImage( cvSize(newArrival->width, newArrival->height), 8, IPL_PXL_BYTES );
+    
+#ifdef VISUALIZE
+    cvNamedWindow("SURF", CV_WINDOW_AUTOSIZE);
+#endif
+    
     // Initialize SURFer
-	fprintf(stderr,"starting surfer...");
-	glw.init("GPU-surf",256,256,false);
-	surfer = new SurfObject;
-	//surfer->setWindow(&glw);
-	surfer->setVerbose(true);
-	surfer->setUpSurf(upsurf);
-	surfer->setThreshold(surf_threshold);
-
-	fprintf(stderr,"done creating surfer...\n");
-
+    fprintf(stderr,"starting surfer...");
+    glw.init("GPU-surf",256,256,false);
+    surfer = new SurfObject;
+    //surfer->setWindow(&glw);
+    surfer->setVerbose(true);
+    surfer->setUpSurf(upsurf);
+    surfer->setThreshold(surf_threshold);
+    
+    fprintf(stderr,"done creating surfer...\n");
+    
     // Main loop
     printf("Entering SURF Main Loop\n");
     while (ros::ok())
-    {
+      {
         char c = cvWaitKey(5);
         if (c == 'Q' || c == 'q')
             break;
@@ -193,8 +193,8 @@ int main(int argc, char **argv)
         // *****************************************
         
         // Get SURF Descriptors and 2D Coords
-        surfer->loadMemoryImage(SURF_IMG_TYPE.c_str(), kA->im->width, kA->im->height, (unsigned char*)kA->im->imageData);         
-        surfer->run(&rgb_fd);   
+	surfer->loadMemoryImage(SURF_IMG_TYPE.c_str(), kA->im->width, kA->im->height, (unsigned char*)kA->im->imageData);         
+	surfer->run(&rgb_fd);   
         
         printf("found %i SURF features\n", rgb_fd.nrf);
         
@@ -246,7 +246,7 @@ int main(int argc, char **argv)
 	//	downsampleCloud(kA);
 	
 	
-      	printf("Downsampled successfully\n");
+	// printf("Downsampled successfully\n");
 
   	fflush(stdout);
 

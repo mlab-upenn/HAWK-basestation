@@ -24,7 +24,7 @@ void * get_in_addr(struct sockaddr *sa)
 }
 
 
-void setup_depth( void )
+int setup_depth( void )
 {
   int ret;
   strm.zalloc = Z_NULL;
@@ -35,11 +35,12 @@ void setup_depth( void )
   ret = inflateInit(&strm);
   if(ret != Z_OK) {
     printf("inflateInit failed!\n");
-    exit(1);
+    return -1;
   }
+  return 0;
 }
 
-void decompress_depth(uint8_t * dest, const uint8_t * src, const int size,
+int decompress_depth(uint8_t * dest, const uint8_t * src, const int size,
 		const int dest_size)
 {
   strm.avail_in = size;
@@ -51,14 +52,15 @@ void decompress_depth(uint8_t * dest, const uint8_t * src, const int size,
   
   if(ret != Z_STREAM_END) {
     printf("Expected Z_STREAM_END!\n");
-    exit(1);
+    return -1;
   }
 
   ret = inflateReset(&strm);
   if(ret != Z_OK) {
     printf("zlib reset failed!\n");
-    exit(1);
+    return -1;
   }
+  return 0;
 }
 
 struct jpeg_decompress_struct cinfo;

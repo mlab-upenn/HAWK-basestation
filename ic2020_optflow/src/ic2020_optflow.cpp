@@ -198,6 +198,21 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg_ptr)
   new_B = true;
 }
 
+/*
+void imageCallback(const sensor_msgs::ImageConstPtr& msg_ptr)
+{
+  if(keyframeB->im == NULL) {
+     keyframeB->im = cvCreateImage(cvSize(msg_ptr->width, msg_ptr->height),
+				   IPL_DEPTH_8U, 3);
+  }
+  keyframeB->height = keyframeB->im->height;
+  keyframeB->width = keyframeB->im->width;
+  memcpy((uint8_t *)keyframeB->im->imageData, (uint8_t *)&msg_ptr->data[0],
+	 msg_ptr->height*msg_ptr->width*3*sizeof(uint8_t));
+  new_B = true;
+}
+*/
+
 void imuCallback(const sensor_msgs::Imu& msg_ptr)
 {
     keyframeB->imux = msg_ptr.linear_acceleration.x;
@@ -435,8 +450,10 @@ int main(int argc, char **argv)
                 keyframeB->keyframe_num = keyframe_num;
             }
         }
-
+	
+	#ifdef VISUALIZE
         cvShowImage("OpticalFlow", view_im); 
+	#endif
     }
     
     return 0;

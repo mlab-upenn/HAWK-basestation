@@ -81,6 +81,25 @@ CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/vision_open
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/pluginlib/manifest.xml
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/utilities/message_filters/manifest.xml
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/image_common/image_transport/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/eigen/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/perception_pcl/cminpack/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/perception_pcl/flann/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/perception_pcl/pcl/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/bond_core/bond/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/bond_core/smclib/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/bond_core/bondcpp/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/nodelet_core/nodelet/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/nodelet_core/nodelet_topic_tools/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/tools/rosmsg/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/tools/rostopic/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/tools/rosservice/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/bullet/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/geometry/angles/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/tools/rosnode/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/utilities/roswtf/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/geometry/tf/manifest.xml
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/messages/std_msgs/msg_gen/generated
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/messages/rosgraph_msgs/msg_gen/generated
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/msg_gen/generated
@@ -89,17 +108,24 @@ CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/ros_comm/to
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/common_msgs/geometry_msgs/msg_gen/generated
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/msg_gen/generated
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/common_msgs/sensor_msgs/srv_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/perception_pcl/pcl/msg_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/bond_core/bond/msg_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/nodelet_core/nodelet/srv_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/msg_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/driver_common/dynamic_reconfigure/srv_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/geometry/tf/msg_gen/generated
+CMakeFiles/SURFHelper.dir/src/SURFHelper.o: /opt/ros/electric/stacks/geometry/tf/srv_gen/generated
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/mlab/ros/HAWK-basestation/ic2020_vodom/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/SURFHelper.dir/src/SURFHelper.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/SURFHelper.dir/src/SURFHelper.o -c /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/SURFHelper.dir/src/SURFHelper.o -c /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp
 
 CMakeFiles/SURFHelper.dir/src/SURFHelper.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SURFHelper.dir/src/SURFHelper.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp > CMakeFiles/SURFHelper.dir/src/SURFHelper.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp > CMakeFiles/SURFHelper.dir/src/SURFHelper.i
 
 CMakeFiles/SURFHelper.dir/src/SURFHelper.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SURFHelper.dir/src/SURFHelper.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp -o CMakeFiles/SURFHelper.dir/src/SURFHelper.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/mlab/ros/HAWK-basestation/ic2020_vodom/src/SURFHelper.cpp -o CMakeFiles/SURFHelper.dir/src/SURFHelper.s
 
 CMakeFiles/SURFHelper.dir/src/SURFHelper.o.requires:
 .PHONY : CMakeFiles/SURFHelper.dir/src/SURFHelper.o.requires

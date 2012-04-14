@@ -27,8 +27,8 @@ void copyInColorData(Keyframe * kA)
 
     if(color_x >= 0 && color_x < 640 && color_y >= 0 && color_y < 480) { 
       points[i].r = rgbBuf[color_idx];
-      points[i].g = rgbBuf[color_idx];
-      points[i].b = rgbBuf[color_idx];
+      points[i].g = rgbBuf[color_idx+1];
+      points[i].b = rgbBuf[color_idx+2];
     }   
 
   }
