@@ -1,3 +1,9 @@
+/************************************************************************
+ * 
+ * The following file is NOT compiled as part of the HAWK system.
+ * 
+ * **********************************************************************
+
 #include "pcl/point_types.h"
 #include "pcl_ros/point_cloud.h"
 
