@@ -1,1 +1,58 @@
-sup
+  * Readme for HAWK Basestation *
+
+Author: Paul Gurniak
+
+Date created: May 3, 2012
+
+Note that all files for this project can be found in our Git repository:
+https://github.com/mlab/HAWK-basestation
+
+
+I. Purpose:
+
+The purpose of this Readme is to provide installation instructions for the software components of the HAWK basestation.
+
+Because this project is distributed as open-source for Linux, it is assumed that the reader will have experience working with, compiling and installing open source software.  This includes a working knowledge of make/cmake, a package manager (apt-get), and the organization of the Linux file system.
+
+
+II. Prerequisites:
+
+Before you begin, you should ensure that you have the following prerequisites installed and configured for your system:
+
+- NVIDIA Graphics Development driver 290.10 for Linux x64
+- NVIDIA CUDA Toolkit 4.0.17 for Linux x64
+- NVIDIA GPU Computing SDK 4.0.17 (compiled from source)
+- ImageMagick version 6.4.5 (compiled from source)
+- The following Ubuntu packages: build-essential, cmake, freeglut3, nvidia-cg-toolkit, libglew1.5-dev, gcc-4.4, g++-4.4
+- ROS Electric (installed from packages)
+- GPUSURF for Linux x64
+
+
+III. Installation procedure:
+
+The HAWK basestation makes use of ROS for installation and dependency resolution.  If you have configured your Linux system with the above requirements properly, you should be able to run:
+
+rosmake basestation
+
+From a terminal to compile all software.  If anything fails to compile, check the file CMakeLists.txt in the directory for the process that fails to make sure that all paths are consistent with your system installation.
+
+In order to run the mapping routine, you will need to run the following processes:
+
+roslaunch basestation stage1.launch
+roslaunch basestation stage2.launch
+
+Connection and mapping will start once the base station begins receiving code from the quadrotor.
+
+
+IV. Organization of this Directory
+
+Each component of the HAWK basestation system is included in its own subdirectory.  The functional components include:
+  1. netbench: code for the network connection to the Microsoft Kinect and Intel Atom onboard the quadrotor
+  2. ic2020_optflow: code that receives data from netbench (through ROS), and distributes to other components
+  3. ic2020_surf: code that interfaces with GPUSURF to perform feature extraction
+  4. ic2020_vodom: code that performs visual odometry using RANSAC and SURF features
+  5. ic2020_renderer: code that renders and downsamples the 3D map
+
+There are also two experimental (untested) components that are not considered part of the HAWK basestation.  The following two directories contain code that is provided as-is for future work by other teams.  These are virtually unmodified from the original ic2020 code.
+  1. ic2020_loop: code to detect loop closure
+  2. ic2020_toro: code for graph optimization when loop closure is detected.
