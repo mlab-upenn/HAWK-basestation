@@ -1,4 +1,14 @@
-// File for PCD file export of ic2020 data
+/*
+pgexport: program to export the point cloud data built by the HAWK SLAM system into a raw file.
+
+Author: Paul Gurniak (pgurniak@gmail.com)
+
+Date created: March 16, 2012
+
+Note that all files for this project can be found in our Git repository:
+https://github.com/mlab/HAWK-basestation
+
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
