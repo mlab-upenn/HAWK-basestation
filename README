@@ -14,7 +14,6 @@ The purpose of this Readme is to provide installation instructions for the softw
 
 Because this project is distributed as open-source for Linux, it is assumed that the reader will have experience working with, compiling and installing open source software.  This includes a working knowledge of make/cmake, a package manager (apt-get), and the organization of the Linux file system.
 
-
 II. Prerequisites:
 
 Before you begin, you should ensure that you have the following prerequisites installed and configured for your system:
