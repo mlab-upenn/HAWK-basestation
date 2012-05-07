@@ -1,3 +1,15 @@
+/*
+Netbench: program for commmunication with the Intel Atom and Microsoft Kinect onboard the quadrotor.  This program receives data from the Intel Atom, decompresses it, and publishes to predefined topics in the ROS system.
+
+Author: Paul Gurniak (pgurniak@gmail.com)
+
+Date created: March 16, 2012
+
+Note that all files for this project can be found in our Git repository:
+https://github.com/mlab/HAWK-basestation
+
+*/
+
 #ifndef INCONCE
 #include "pgcommon.h"
 #include "pgdecompress.h"
