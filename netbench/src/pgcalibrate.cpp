@@ -1,4 +1,15 @@
-/**
+/*
+Netbench: program for commmunication with the Intel Atom and Microsoft Kinect onboard the quadrotor.  This program receives data from the Intel Atom, decompresses it, and publishes to predefined topics in the ROS system.
+
+Author: Paul Gurniak (pgurniak@gmail.com)
+
+Date created: March 16, 2012
+
+Note that all files for this project can be found in our Git repository:
+https://github.com/mlab/HAWK-basestation
+*/
+
+/* This file (pgcalibrate.cpp):
  * Contains various functions to convert standard Kinect data
  * (RGB array and depth array) into a point cloud.  This
  * includes image registration and depth to real world
