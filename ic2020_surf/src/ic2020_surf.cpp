@@ -1,6 +1,14 @@
 /************************************************************************
  * 
- * This source code is part of the IC2020 SLAM System
+ * This source code was modified from the IC2020 SLAM System for the
+ * HAWK Project (www.airhacks.org).
+ * 
+ * Modifier: Paul Gurniak (pgurniak@gmail.com)
+ * Date of Modification: 3/16/2012
+ * 
+ * The original license is provided below, whose terms still apply.
+ * 
+ * **********************************************************************
  * 
  * IC2020 Copyright (C) 2011
  * Sean Anderson
