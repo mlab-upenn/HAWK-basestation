@@ -1,3 +1,14 @@
+/*
+pgdownsample: file for downsampling the point cloud before it is provided to the renderer.
+
+Author: Paul Gurniak (pgurniak@gmail.com)
+
+Date created: April 7, 2012
+
+Note that all files for this project can be found in our Git repository:
+https://github.com/mlab/HAWK-basestation
+
+*/
 
 #include "sensor_msgs/PointCloud2.h"
 #include <pcl/point_types.h>
@@ -79,24 +90,5 @@ void downsampleCloud(Keyframe * kA)
 
   // Downsampling messes up the RGB data, so just copy it in here
   copyInColorData(kA);
-
-  /*
-  cloud->height = 1;
-  cloud->width = 640*480;
-  cloud->points.resize(640*480);
-  memcpy((uint8_t *) &(cloud->points[0]), (uint8_t *) &(kA->points[0]),
-	 640*480*4*sizeof(float));
-
-  sor.setInputCloud(cloud);
-  sor.setLeafSize(0.01f, 0.01f, 0.01f);
-  sor.filter(*cloud_filtered);
-
-  printf("Filtered cloud down to %d\n", cloud_filtered->height*cloud_filtered->width);
-  
-  memcpy((uint8_t *)&(kA->points[0]), &(cloud_filtered->points[0]),
-	 4*sizeof(float)*cloud_filtered->height*cloud_filtered->width);
-
-  kA->numberOf3DPoints = cloud_filtered->height*cloud_filtered->width;
-  */
 
 }
